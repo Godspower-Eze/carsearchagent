@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>Search Agent</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet" />
+        <link rel="stylesheet" href="{% static 'css/main.css'%}" />
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
+	</head>
+	<body id="top">
+
+			<!-- Banner -->
+			<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+<section id="banner" data-video="images/banner">
+<div class="inner">
+    <header>
+        <a href="{% url 'search' %}" class="btn btn-success btn-block">Go To Advanced Search</a>
+        <br/>
+        <br/>
+        <br/>
+        <a href="{% url 'logout' %}" class="btn btn-danger btn-block">Logout</a>
+    </header>
+</div>
+</section>
+
+			<!-- Main -->
+				<div id="main">
+					<div class="inner">
+
+					<!-- Boxes -->
+						<div id="head-div" class="thumbnails">
+
+							<div id = "head-inner-div" class="box">
+								<p class="image fit"><img src="{% static 'images/pic01.jpg'%}" alt="" /></p>
+								<div class="inner">
+									<h3 id="feature1">Car Features1: Volvo1</h3>
+									<p id="feature2">Car Features2: Volvo 23</p>
+									<a href="" class="button fit" data-poptrox="youtube,800x400" target="_blank">Go To Product</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+			
+				</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'js/jquery.poptrox.min.js' %}"></script>
+			<script src="{% static 'js/skel.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+
+<script>
+    let socket = new WebSocket("ws://"+ window.location.host+"/ws/home/")
+    console.log(window.location)
+    socket.onopen = function(e){
+        alert("Connection Established")
+    }
+    socket.onmessage = function(e){
+		var oldElem = document.querySelector('#head-inner-div')
+		console.log(oldElem)
+        var newElem = oldElem.cloneNode(true)
+        var data = e.data
+        var jsondata = JSON.parse(data)
+        var value = jsondata['value']
+        console.log(value)
+        if (value){
+            console.log(value)
+            console.log(newElem)
+            newElem.querySelector('img').setAttribute('src',value.img_url)
+            newElem.querySelector('#feature1').textContent = `Car Feature 1: ${value.feature1}`
+            newElem.querySelector('#feature2').textContent = `Car Feature 2: ${value.feature2}`
+            newElem.querySelector('a').setAttribute('href',value.href_item)
+            var parentDiv = document.querySelector('#head-div')
+            parentDiv.append(newElem)
+            Email.send({
+                Host:'smtp.gmail.com',
+                Username: 'caragent682@gmail.com',
+                Password: 'caragent265',
+                To: 'Milliborn@yahoo.com, ikechukwuka4paypal@gmail.com',
+                From: 'caragent682@gmail.com',
+                Subject : 'Car Alert',
+                Body: `Car Feature 2 ${value.feature1} Car Feature 2 ${value.feature2} link ${value.href_item}`,
+                Attachments: [
+                    {
+                        name: `${value.feature1}.png`,
+                        path: value.img_url
+                    }
+                ]
+                }).then(message => console.log("Email sent"))
+                }
+
+    }
+    socket.onclose = function(e){
+        alert("Connection Closed")
+    }
+</script>
+</html>

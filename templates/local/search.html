@@ -1,0 +1,344 @@
+{% load static %}
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
+    <link href="{% static 'css/maina.css'%}" rel="stylesheet" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+  </head>
+  <body>
+    <div class="s008">
+      <form method="post">
+        {% csrf_token %}
+        <div class="inner-form">
+          <div class="advance-search">
+            <span class="desc">Advanced Search</span>
+            <div class="row">
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="vehicle-type">
+                    <option placeholder="">VEHICLE TYPE</option>
+                    <option value="pakettiauto">VAN</option>
+                    <option value="henkilöauto">SEDAN</option>
+                    <option value="viistoperä">HATCHBACK</option>
+                    <option value="farmari">FARMER</option>
+                    <option value="avoauto">CONVERTIBLE</option>
+                    <option value="coupé">COUPE</option>
+                    <option value="tila-auto">MINIVAN</option>
+                    <option value="monikäyttö">MULTIPURPOSE</option>
+                    <option value="maasturi">SUV</option>
+                    <option value="avolava">OPEN PLATFORM</option>
+                    <option value="minibussi">MINIBUS</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="gearing">
+                    <option placeholder="">GEARING</option>
+                    <option value="manuaali">MANUAL</option>
+                    <option value="automaatti">AUTOMATIC</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="fuel">
+                    <option placeholder="">FUEL</option>
+                    <option value="diesel">DIESEL</option>
+                    <option value="bensiini">PETROL</option>
+                    <option value="hybridi">HYBRID</option>
+                    <option value="kaasu">GAS</option>
+                    <option value="sähkö">ELECTRIC</option>
+                    <option value="e85 / flexifuel">E85/FLEXIFUEL</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row second">
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="year-model">
+                    <option placeholder="">YEAR MODEL</option>
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="min-price">
+                    <option placeholder="">MIN PRICE</option>
+                    <option value="0">0</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                    <option value="4000">4000</option>
+                    <option value="6000">6000</option>
+                    <option value="8000">8000</option>
+                    <option value="10000">10000</option>
+                    <option value="12500">12500</option>
+                    <option value="15000">15000</option>
+                    <option value="17500">17500</option>
+                    <option value="20000">20000</option>
+                    <option value="25000">25000</option>
+                    <option value="30000">30000</option>
+                    <option value="40000">40000</option>
+                    <option value="50000">50000</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="max-price">
+                    <option placeholder="">MAX PRICE</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                    <option value="4000">4000</option>
+                    <option value="6000">6000</option>
+                    <option value="8000">8000</option>
+                    <option value="10000">10000</option>
+                    <option value="12500">12500</option>
+                    <option value="15000">15000</option>
+                    <option value="17500">17500</option>
+                    <option value="20000">20000</option>
+                    <option value="25000">25000</option>
+                    <option value="30000">30000</option>
+                    <option value="40000">40000</option>
+                    <option value="50000">50000</option>
+                    <option value="More Than 50000">More Than 50000</option>
+                  </select>
+                </div>
+              </div>
+              <br/>
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="min-mileage">
+                    <option placeholder="">MIN MILEAGE</option>
+                    <option value="100">0</option>
+                    <option value="100">100</option>
+                    <option value="5000">5000</option>
+                    <option value="10000">10000</option>
+                    <option value="15000">15000</option>
+                    <option value="20000">20000</option>
+                    <option value="25000">25000</option>
+                    <option value="30000">30000</option>
+                    <option value="35000">35000</option>
+                    <option value="40000">40000</option>
+                    <option value="45000">45000</option>
+                    <option value="50000">50000</option>
+                    <option value="55000">55000</option>
+                    <option value="60000">60000</option>
+                    <option value="65000">65000</option>
+                    <option value="70000">70000</option>
+                    <option value="75000">75000</option>
+                    <option value="80000">80000</option>
+                    <option value="85000">85000</option>
+                    <option value="90000">90000</option>
+                    <option value="95000">95000</option>
+                    <option value="100000">100000</option>
+                    <option value="110000">110000</option>
+                    <option value="120000">120000</option>
+                    <option value="130000">130000</option>
+                    <option value="140000">140000</option>
+                    <option value="150000">150000</option>
+                    <option value="160000">160000</option>
+                    <option value="170000">170000</option>
+                    <option value="180000">180000</option>
+                    <option value="190000">190000</option>
+                    <option value="200000">200000</option>
+                    <option value="250000">250000</option>
+                    <option value="300000">300000</option>
+                    <option value="350000">350000</option>
+                    <option value="400000">400000</option>
+                    <option value="450000">450000</option>
+                    <option value="500000">500000</option>
+                  </select>
+                </div>
+              </div>
+              <br/>
+            <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="max-mileage">
+                    <option placeholder="">MAX MILEAGE</option>
+                    <option value="100">100</option>
+                    <option value="5000">5000</option>
+                    <option value="10000">10000</option>
+                    <option value="15000">15000</option>
+                    <option value="20000">20000</option>
+                    <option value="25000">25000</option>
+                    <option value="30000">30000</option>
+                    <option value="35000">35000</option>
+                    <option value="40000">40000</option>
+                    <option value="45000">45000</option>
+                    <option value="50000">50000</option>
+                    <option value="55000">55000</option>
+                    <option value="60000">60000</option>
+                    <option value="65000">65000</option>
+                    <option value="70000">70000</option>
+                    <option value="75000">75000</option>
+                    <option value="80000">80000</option>
+                    <option value="85000">85000</option>
+                    <option value="90000">90000</option>
+                    <option value="95000">95000</option>
+                    <option value="100000">100000</option>
+                    <option value="110000">110000</option>
+                    <option value="120000">120000</option>
+                    <option value="130000">130000</option>
+                    <option value="140000">140000</option>
+                    <option value="150000">150000</option>
+                    <option value="160000">160000</option>
+                    <option value="170000">170000</option>
+                    <option value="180000">180000</option>
+                    <option value="190000">190000</option>
+                    <option value="200000">200000</option>
+                    <option value="250000">250000</option>
+                    <option value="300000">300000</option>
+                    <option value="350000">350000</option>
+                    <option value="400000">400000</option>
+                    <option value="450000">450000</option>
+                    <option value="500000">500000</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row third">
+              <div class="input-field">
+                <div class="result-count">
+                  <span id="codedresult">0</span>results</div>
+                <div class="group-btn">
+                  <button class="btn-delete" id="delete">Reset</button>
+                  <button class="btn-search">Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="main">
+      <div class="inner">
+    <div id="head-div" class="thumbnails">
+        <div id = "head-inner-div" class="box">
+            <p class="image fit"><img src="{% static 'images/pic01.jpg'%}" alt="" /></p>
+            <div class="inner">
+                <h3 id="feature1">Car Features1: Volvo1</h3>
+                <p id="feature2">Car Features2: Volvo 23</p>
+                <a href="" class="button fit" data-poptrox="youtube,800x400" target="_blank">Go To Product</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="{% static 'js/choices.js' %}"></script>
+    <script>
+      const customSelects = document.querySelectorAll("select");
+      const deleteBtn = document.getElementById('delete')
+      const choices = new Choices('select',
+      {
+        searchEnabled: false,
+        removeItemButton: true,
+        itemSelectText: '',
+      });
+      for (let i = 0; i < customSelects.length; i++)
+      {
+        customSelects[i].addEventListener('addItem', function(event)
+        {
+          if (event.detail.value)
+          {
+            let parent = this.parentNode.parentNode
+            parent.classList.add('valid')
+            parent.classList.remove('invalid')
+          }
+          else
+          {
+            let parent = this.parentNode.parentNode
+            parent.classList.add('invalid')
+            parent.classList.remove('valid')
+          }
+        }, false);
+      }
+      deleteBtn.addEventListener("click", function(e)
+      {
+        e.preventDefault()
+        const deleteAll = document.querySelectorAll('.choices__button')
+        for (let i = 0; i < deleteAll.length; i++)
+        {
+          deleteAll[i].click();
+        }
+      });
+
+    </script>
+  <script>
+    let socket = new WebSocket("ws://"+ window.location.host+"/ws/search/")
+    console.log(window.location)
+    socket.onopen = function(e){
+        console.log('Connection started')
+    }
+    socket.onmessage = function(e){
+		var oldElem = document.querySelector('#head-inner-div')
+		console.log(oldElem)
+        var newElem = oldElem.cloneNode(true)
+        var data = e.data
+        var jsondata = JSON.parse(data)
+        var value = jsondata['value']
+        console.log(value)
+        var results = parseInt(document.querySelector('#codedresult').textContent)
+        console.log(typeof results )
+        if (value){
+            results = results + 1
+            console.log(value)
+            console.log(newElem)
+            newElem.querySelector('img').setAttribute('src',value.img_url)
+            newElem.querySelector('#feature1').textContent = `Car Feature 1: ${value.feature1}`
+            newElem.querySelector('#feature2').textContent = `Car Feature 2: ${value.feature2}`
+            newElem.querySelector('a').setAttribute('href',value.href_item)
+            var parentDiv = document.querySelector('#head-div')
+            parentDiv.append(newElem)
+            Email.send({
+                Host:'smtp.gmail.com',
+                Username: 'caragent682@gmail.com',
+                Password: 'caragent265',
+                To: 'Milliborn@yahoo.com, ikechukwuka4paypal@gmail.com',
+                From: 'caragent682@gmail.com',
+                Subject : 'Car Alert',
+                Body: `Car Feature 2 ${value.feature1} Car Feature 2 ${value.feature2} link ${value.href_item}`,
+                Attachments: [
+                    {
+                        name: `${value.feature1}.png`,
+                        path: value.img_url
+                    }
+                ]
+                }).then(message => console.log("Email sent"))
+                }
+
+    }
+    socket.onclose = function(e){
+        console.log('Connection closed')
+    }
+</script>
+  </body>
+</html>

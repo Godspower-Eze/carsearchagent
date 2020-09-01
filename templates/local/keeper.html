@@ -1,0 +1,65 @@
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js'%}">
+
+</script>
+<script>
+    let socket = new WebSocket("ws://"+ window.location.host+"/ws/home/")
+    console.log(window.location)
+    socket.onopen = function(e){
+        alert("Connection Established")
+    }
+    socket.onmessage = function(e){
+        var oldElem = document.querySelector('#head-inner-div')
+        var newElem = oldElem.cloneNode(true)
+        var data = e.data
+        var jsondata = JSON.parse(data)
+        var value = jsondata['value']
+        console.log(value)
+        if (value){
+            console.log(value)
+            console.log(newElem)
+            newElem.querySelector('img').setAttribute('src',value.img_url)
+            newElem.querySelector('#feature1').textContent = `Car Feature 1: ${value.feature1}`
+            newElem.querySelector('#feature2').textContent = `Car Feature 2: ${value.feature2}`
+            newElem.querySelector('a').setAttribute('href',value.href_item)
+            var parentDiv = document.querySelector('#head-div')
+            parentDiv.append(newElem)
+            Email.send({
+                Host:'smtp.gmail.com',
+                Username: 'caragent682@gmail.com',
+                Password: 'caragent265',
+                To: 'Milliborn@yahoo.com, ikechukwuka4paypal@gmail.com',
+                From: 'caragent682@gmail.com',
+                Subject : 'Car Alert',
+                Body: `Car Feature 2 ${value.feature1} Car Feature 2 ${value.feature2} link ${value.href_item}`,
+                Attachments: [
+                    {
+                        name: `${value.feature1}.png`,
+                        path: value.img_url
+                    }
+                ]
+                }).then(message => console.log("Email sent"))
+                }
+
+    }
+    socket.onclose = function(e){
+        alert("Connection Closed")
+    }
+</script>
+
+<div id="head-div" class="w-100 h-100">
+<div id="head-inner-div" class="row headdiv bg-light w-100 h-100">
+<div class="mx-auto col-md-6 col-sm-12">
+    <p><img src=""></p>
+</div>
+<div class="mx-auto col-md-6 col-sm-12">
+    <p id="feature1">Car Features1: Volvo1</p>
+    <p id="feature2">Car Features2: Volvo 23</p>
+    <a class="btn btn-info btn-block" target="_blank" href="#">Go To Product</a>
+</div>
+</div>
+</div>
+
+<link href="{% static 'css/bootstrap.min.css'%}"  type="text/css" rel="stylesheet">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    

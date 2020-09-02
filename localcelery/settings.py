@@ -24,7 +24,7 @@ SECRET_KEY = 'ch5v^tgzimhb9ktr&fz=ruv3es#4ni9w!q5%dn3#1wi8eq$-a='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['134.122.106.240', '127.0.0.1']
 
 # Application definition
 
@@ -145,7 +145,6 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
-
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'

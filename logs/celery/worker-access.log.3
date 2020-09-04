@@ -1,0 +1,22 @@
+ 
+ -------------- celery@caragent v4.4.7 (cliffs)
+--- ***** ----- 
+-- ******* ---- Linux-5.4.0-45-generic-x86_64-with-glibc2.29 2020-09-04 02:49:44
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         localcelery:0x7fa8181e4e20
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     redis://localhost:6379/
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . local.tasks.data_sender
+  . local.tasks.email_sender
+  . local.tasks.searched_value_sender
+  . localcelery.celery.debug_task
+

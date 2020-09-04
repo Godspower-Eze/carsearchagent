@@ -224,7 +224,7 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist):
 
 @shared_task
 def data_sender():
-    ws.connect("ws://127.0.0.1:8080/ws/home/")
+    ws.connect("ws://209.97.141.28/ws/home/")
     for href in pages_list:
         context = (crawl(href))
         ws.send(json.dumps({'value': context}))
@@ -232,7 +232,7 @@ def data_sender():
 
 @shared_task
 def searched_value_sender(mileagerange, pricerange, searchlist):
-    ws.connect("ws://127.0.0.1:8080/ws/search/")
+    ws.connect("ws://209.97.141.28/ws/search/")
     for href in pages_list:
         print('Working')
         context = (get_all_website_links(href, mileagerange, pricerange, searchlist))

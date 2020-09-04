@@ -1,0 +1,288 @@
+2020/09/04 02:58:03 [alert] 23985#23985: 768 worker_connections are not enough
+2020/09/04 02:58:03 [error] 23985#23985: *766 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 02:58:04 [alert] 23985#23985: 768 worker_connections are not enough
+2020/09/04 02:58:04 [error] 23985#23985: *1531 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 02:58:21 [alert] 23985#23985: 768 worker_connections are not enough
+2020/09/04 02:58:21 [error] 23985#23985: *2296 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 02:58:21 [alert] 23985#23985: 768 worker_connections are not enough
+2020/09/04 02:58:21 [error] 23985#23985: *3062 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 03:02:17 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:18 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:18 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:19 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:19 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:20 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:20 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:21 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:21 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:22 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:22 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:23 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:23 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:24 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:24 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:25 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:25 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:26 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:26 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:27 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:27 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:28 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:28 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:29 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:29 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:30 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:30 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:31 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:31 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:32 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:32 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:33 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:33 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:34 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:34 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:35 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:35 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:36 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:36 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:37 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:37 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:38 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:38 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:39 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:39 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:40 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:40 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:41 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:41 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:42 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:42 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:43 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:43 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:44 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:44 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:45 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:45 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:46 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:46 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:47 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:47 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:48 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:48 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:49 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:49 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:50 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:50 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:02:51 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:25 [alert] 24096#24096: *2029 socket() failed (24: Too many open files) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 03:03:26 [alert] 24096#24096: *3039 socket() failed (24: Too many open files) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28"
+2020/09/04 03:03:32 [alert] 24096#24096: *4049 socket() failed (24: Too many open files) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 03:03:42 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:42 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:43 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:43 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:44 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:44 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:45 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:45 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:46 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:46 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:47 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:47 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:48 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:48 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:49 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:49 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:50 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:50 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:51 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:51 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:52 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:52 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:53 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:53 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:54 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:54 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:55 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:55 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:56 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:56 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:57 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:57 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:58 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:58 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:59 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:03:59 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:00 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:01 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:01 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:02 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:02 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:03 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:03 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:04 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:04 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:05 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:05 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:06 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:06 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:07 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:07 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:08 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:08 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:09 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:09 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:10 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:10 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:11 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:11 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:12 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:12 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:13 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:13 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:14 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:14 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:15 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:15 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:16 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:16 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:17 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:17 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:18 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:18 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:19 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:19 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:20 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:20 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:21 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:21 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:22 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:22 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:23 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:23 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:24 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:24 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:25 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:25 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:26 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:26 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:27 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:27 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:28 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:28 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:29 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:29 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:30 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:30 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:31 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:31 [alert] 24096#24096: *5061 socket() failed (24: Too many open files) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 03:04:41 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:41 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:42 [crit] 24096#24096: accept4() failed (24: Too many open files)
+2020/09/04 03:04:42 [alert] 24096#24096: *6073 socket() failed (24: Too many open files) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 03:24:35 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:35 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:36 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:36 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:37 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:37 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:38 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:38 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:39 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:39 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:40 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:40 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:41 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:41 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:42 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:42 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:43 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:43 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:44 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:44 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:45 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:45 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:46 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:46 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:47 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:47 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:48 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:48 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:49 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:49 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:50 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:50 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:51 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:51 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:52 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:52 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:53 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:53 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:54 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:54 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:55 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:55 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:56 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:56 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:57 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:57 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:58 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:58 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:24:59 [crit] 24554#24554: accept4() failed (24: Too many open files)
+2020/09/04 03:25:08 [alert] 24554#24554: *2028 socket() failed (24: Too many open files) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 04:02:43 [error] 25540#25540: *20257 upstream prematurely closed connection while reading response header from upstream, client: 129.205.113.207, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 10:31:04 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:04 [error] 35150#35150: *53874 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 10:31:04 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:04 [error] 35150#35150: *54639 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 10:31:09 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:09 [error] 35150#35150: *55404 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 10:31:10 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:10 [error] 35150#35150: *56170 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 10:31:11 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:11 [error] 35150#35150: *56935 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 10:31:12 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:12 [error] 35150#35150: *57701 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 10:31:12 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:12 [error] 35150#35150: *58466 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 10:31:12 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:12 [error] 35150#35150: *59232 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 10:31:13 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:13 [error] 35150#35150: *59997 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 10:31:13 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:13 [error] 35150#35150: *60763 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 10:31:13 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:13 [error] 35150#35150: *61528 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 10:31:13 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:13 [error] 35150#35150: *62294 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 10:31:14 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:14 [error] 35150#35150: *63059 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 10:31:15 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:15 [error] 35150#35150: *63825 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 10:31:15 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:15 [error] 35150#35150: *64590 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 10:31:15 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:15 [error] 35150#35150: *65356 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 10:31:16 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:16 [error] 35150#35150: *66121 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 10:31:16 [alert] 35150#35150: 768 worker_connections are not enough
+2020/09/04 10:31:16 [error] 35150#35150: *66887 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 10:36:26 [alert] 35297#35297: 1024 worker_connections are not enough
+2020/09/04 10:36:26 [error] 35297#35297: *67910 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 10:36:27 [alert] 35297#35297: 1024 worker_connections are not enough
+2020/09/04 10:36:27 [error] 35297#35297: *68931 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 10:36:30 [alert] 35297#35297: 1024 worker_connections are not enough
+2020/09/04 10:36:30 [error] 35297#35297: *69952 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.1.1:80/", host: "209.97.141.28"
+2020/09/04 10:36:31 [alert] 35297#35297: 1024 worker_connections are not enough
+2020/09/04 10:36:31 [error] 35297#35297: *70974 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.0", upstream: "http://127.0.1.1:80/favicon.ico", host: "209.97.141.28", referrer: "http://209.97.141.28/"
+2020/09/04 12:25:21 [crit] 1167#1167: *2 connect() to unix:/home/godspower/caragent/run/gunicorn.sock failed (2: No such file or directory) while connecting to upstream, client: 129.205.113.207, server: , request: "GET / HTTP/1.1", upstream: "http://unix:/home/godspower/caragent/run/gunicorn.sock:/", host: "209.97.141.28"
+2020/09/04 12:26:28 [crit] 1167#1167: *5 connect() to unix:/home/godspower/caragent/run/gunicorn.sock failed (2: No such file or directory) while connecting to upstream, client: 88.248.92.237, server: , request: "GET / HTTP/1.1", upstream: "http://unix:/home/godspower/caragent/run/gunicorn.sock:/", host: "209.97.141.28:80"
+2020/09/04 12:41:39 [error] 1402#1402: *27 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 129.205.113.207, server: , request: "GET /ws/search/ HTTP/1.1", upstream: "http://0.0.0.0:8001/ws/search/", host: "209.97.141.28"
+2020/09/04 13:16:47 [error] 977#977: *7 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 209.97.141.28, server: , request: "GET /ws/home/ HTTP/1.1", upstream: "http://0.0.0.0:8001/ws/home/", host: "209.97.141.28"
+2020/09/04 13:18:05 [error] 977#977: *25 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 209.97.141.28, server: , request: "GET /ws/search/ HTTP/1.1", upstream: "http://0.0.0.0:8001/ws/search/", host: "209.97.141.28"
+2020/09/04 13:21:11 [error] 977#977: *85 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 209.97.141.28, server: , request: "GET /ws/search/ HTTP/1.1", upstream: "http://0.0.0.0:8001/ws/search/", host: "209.97.141.28"
+2020/09/04 13:21:43 [error] 977#977: *93 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 129.205.112.248, server: , request: "GET /ws/search/ HTTP/1.1", upstream: "http://0.0.0.0:8001/ws/search/", host: "209.97.141.28"
+2020/09/04 13:23:13 [error] 977#977: *98 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 209.97.141.28, server: , request: "GET /ws/search/ HTTP/1.1", upstream: "http://0.0.0.0:8001/ws/search/", host: "209.97.141.28"
+2020/09/04 13:23:23 [error] 977#977: *101 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 129.205.112.248, server: , request: "GET /ws/search/ HTTP/1.1", upstream: "http://0.0.0.0:8001/ws/search/", host: "209.97.141.28"
+2020/09/04 13:24:19 [error] 977#977: *115 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 209.97.141.28, server: , request: "GET /ws/search/ HTTP/1.1", upstream: "http://0.0.0.0:8001/ws/search/", host: "209.97.141.28"
+2020/09/04 13:26:31 [error] 977#977: *127 recv() failed (104: Connection reset by peer) while proxying upgraded connection, client: 209.97.141.28, server: , request: "GET /ws/search/ HTTP/1.1", upstream: "http://0.0.0.0:8001/ws/search/", host: "209.97.141.28"

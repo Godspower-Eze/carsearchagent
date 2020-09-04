@@ -24,7 +24,7 @@ SECRET_KEY = 'ch5v^tgzimhb9ktr&fz=ruv3es#4ni9w!q5%dn3#1wi8eq$-a='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['134.122.106.240', '127.0.0.1']
+ALLOWED_HOSTS = ['209.97.141.28','127.0.0.1','localhost']
 
 # Application definition
 
@@ -87,7 +87,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'caragent',
-        'USER': 'godspower2',
+        'USER': 'godspower',
         'PASSWORD': 'Eminentfablous50',
         'HOST': 'localhost',
         'PORT': '5432'

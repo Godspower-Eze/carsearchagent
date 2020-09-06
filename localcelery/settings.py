@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'ch5v^tgzimhb9ktr&fz=ruv3es#4ni9w!q5%dn3#1wi8eq$-a='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['209.97.141.28', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -81,24 +81,15 @@ TEMPLATES = [
 
 ASGI_APPLICATION = 'localcelery.routing.application'
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'caragent',
-#         'USER': 'godspower',
-#         'PASSWORD': 'Eminentfablous50',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
-#     }
-# }
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'caragent',
+        'USER': 'godspower',
+        'PASSWORD': 'Eminentfablous50',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 

@@ -11,6 +11,7 @@ import re
 import websocket
 import json
 from django.core.mail import send_mail
+from .models import SearchedValue
 
 ws = websocket.WebSocket()
 
@@ -94,7 +95,9 @@ def crawl(href):
 
 
 def get_all_website_links(href, mileagerange, pricerange, searchlist):
-    print(href)
+    for i in range(len(searchlist)):
+        if searchlist[i] == 'None':
+            searchlist[i] = None
     search = 1
     r = requests.get(href)
     soup = BeautifulSoup(r.content, "html.parser")
@@ -149,25 +152,30 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist):
                                     dic_of_carfeatures['mittarilukema'] = int(dic_of_carfeatures['mittarilukema'])
                             print(dic_of_carfeatures)
                             searchlistlen = len(searchlist)
+                            print(searchlist)
                             foundlist = [item for item in searchlist if item in dic_of_carfeatures.values()]
                             foundlen = len(foundlist)
                             print(foundlen)
                             print(searchlistlen)
-                            if searchlistlen - foundlen >= 1:
+                            if searchlistlen == foundlen:
                                 print(searchlist)
-                                if pricerange[0] != None and pricerange[1] != None:
+                                if pricerange[0] != 'None' and pricerange[1] != 'None':
                                     minn = pricerange[0]
                                     maxx = pricerange[1]
+                                    minn = int(minn)
+                                    maxx = int(maxx)
                                     if price >= minn and price <= maxx:
                                         context['href_item'] = href_item
                                         print(context)
-                                elif pricerange[0] != None:
+                                elif pricerange[0] != 'None':
                                     minn = pricerange[0]
+                                    minn = int(minn)
                                     if price >= minn:
                                         context['href_item'] = href_item
                                         print(context)
-                                elif pricerange[1] != None:
+                                elif pricerange[1] != 'None':
                                     maxx = pricerange[1]
+                                    maxx = int(maxx)
                                     if price <= maxx:
                                         context['href_item'] = href_item
                                         print(context)
@@ -175,20 +183,26 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist):
                                     context['href_item'] = href_item
                                 mileagemin = mileagerange[0]
                                 mileagemax = mileagerange[1]
+                                mileagemin = int(mileagemin)
+                                mileagemax = int(mileagemax)
                                 if dic_of_carfeatures.get('mittarilukema') != None and dic_of_carfeatures.get(
                                         'mittarilukema') != "":
-                                    if mileagerange[0] != None and mileagerange[1] != None:
+                                    if mileagerange[0] != 'None' and mileagerange[1] != 'None':
                                         mileagemin = mileagerange[0]
                                         mileagemax = mileagerange[1]
+                                        mileagemin = int(mileagemin)
+                                        mileagemax = int(mileagemax)
                                         if dic_of_carfeatures['mittarilukema'] >= mileagemin and dic_of_carfeatures[
                                             'mittarilukema'] <= mileagemax:
                                             context['href_item'] = href_item
-                                    elif mileagerange[0] != None:
-                                        mileagemin = pricerange[0]
+                                    elif mileagerange[0] != 'None':
+                                        mileagemin = mileagerange[0]
+                                        mileagemin = int(mileagemin)
                                         if dic_of_carfeatures['mittarilukema'] >= mileagemin:
                                             context['href_item'] = href_item
-                                    elif mileagerange[1] != None:
+                                    elif mileagerange[1] != 'None':
                                         mileagemax = mileagerange[1]
+                                        mileagemax = int(mileagemax)
                                         if dic_of_carfeatures['mittarilukema'] <= mileagemax:
                                             context['href_item'] = href_item
                                     else:
@@ -215,16 +229,20 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist):
                                     res_collector.append(car_features[0].text)
                                 else:
                                     res_collector.append('no feature2')
+                                context['href_item'] = href_item
                                 context['feature1'] = res_collector[1]
                                 context['feature2'] = res_collector[2]
                                 context['img_url'] = res_collector[0]
                                 res_collector = []
                                 return context
+                            else:
+                                context = None
+                                return None
 
 
 @shared_task
 def data_sender():
-    ws.connect("ws://209.97.141.28/ws/home/")
+    ws.connect("ws://127.0.0.1:8000/ws/home/")
     for href in pages_list:
         context = (crawl(href))
         ws.send(json.dumps({'value': context}))
@@ -232,12 +250,32 @@ def data_sender():
 
 @shared_task
 def searched_value_sender(mileagerange, pricerange, searchlist):
-    ws.connect("ws://209.97.141.28/ws/search/")
+    ws.connect("ws://127.0.0.1:8000/ws/search/")
     for href in pages_list:
         print('Working')
         context = (get_all_website_links(href, mileagerange, pricerange, searchlist))
         print(context)
         ws.send(json.dumps({'value': context}))
+
+
+@shared_task
+def searched_value_email_sender():
+    searching_values = SearchedValue.objects.last()
+    mileagerange = searching_values.mileagerange
+    pricerange = searching_values.pricerange
+    searchlist = searching_values.searchlist
+    for href in pages_list:
+        print('Working')
+        context = (get_all_website_links(href, mileagerange, pricerange, searchlist))
+        print(context)
+        if context is not None:
+            print(context['feature1'])
+            print(context['feature2'])
+            print(context['href_item'])
+            print(context['img_url'])
+            send_mail("Advanced Search Car Update",
+                      f"{context['feature1']} {context['feature2']} {context['href_item']} {context['img_url']}",
+                      'caragent682@gmail.com', ['ikechukwuka4paypal@gmail.com', 'Milliborn@yahoo.com'])
 
 
 @shared_task
@@ -250,6 +288,6 @@ def email_sender():
             print(context['feature2'])
             print(context['href_item'])
             print(context['img_url'])
-            send_mail("Car Update",
+            send_mail("Unfiltered Car Update",
                       f"{context['feature1']} {context['feature2']} {context['href_item']} {context['img_url']}",
                       'caragent682@gmail.com', ['ikechukwuka4paypal@gmail.com', 'Milliborn@yahoo.com'])

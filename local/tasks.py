@@ -157,7 +157,7 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist):
                             foundlen = len(foundlist)
                             print(foundlen)
                             print(searchlistlen)
-                            if searchlistlen == foundlen:
+                            if searchlistlen - foundlen >= 1:
                                 print(searchlist)
                                 if pricerange[0] != 'None' and pricerange[1] != 'None':
                                     minn = pricerange[0]
@@ -183,8 +183,6 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist):
                                     context['href_item'] = href_item
                                 mileagemin = mileagerange[0]
                                 mileagemax = mileagerange[1]
-                                mileagemin = int(mileagemin)
-                                mileagemax = int(mileagemax)
                                 if dic_of_carfeatures.get('mittarilukema') != None and dic_of_carfeatures.get(
                                         'mittarilukema') != "":
                                     if mileagerange[0] != 'None' and mileagerange[1] != 'None':
@@ -235,9 +233,6 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist):
                                 context['img_url'] = res_collector[0]
                                 res_collector = []
                                 return context
-                            else:
-                                context = None
-                                return None
 
 
 @shared_task

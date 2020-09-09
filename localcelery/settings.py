@@ -140,8 +140,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 # Use CELERY_ prefix
 
-CELERY_TIMEZONE = 'Africa/Lagos'
-
 # CELERY_ENABLE_UTC = True
 
 CELERY_ACCEPT_CONTENT = ['application/json']

@@ -282,7 +282,7 @@ def searched_value_email_sender():
             print(context['img_url'])
             send_mail("Advanced Search Car Update",
                       f"{context['feature1']} {context['feature2']} {context['href_item']} {context['img_url']}",
-                      'caragent682@gmail.com', ['ikechukwuka4paypal@gmail.com', 'Milliborn@yahoo.com'])
+                      'caragent682@gmail.com', ['ikechukwuka4paypal@gmail.com', 'Milliborn@yahoo.com', 'Clintonbychris@yahoo.com' ,'godspowereze260@gmail.com'])
 
 
 @shared_task

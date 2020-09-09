@@ -11,6 +11,7 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
   </head>
   <body>
+  <a class="btn btn-primary"> Back to home </a>
     <div class="s008">
       <form method="post">
         {% csrf_token %}
@@ -18,6 +19,199 @@
           <div class="advance-search">
             <span class="desc">Advanced Search</span>
             <div class="row">
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="id_make">
+                      <option value="">MAKE (Merkki)</option>
+                      <optgroup label="Haetuimmat">
+                          <option value="4" id="qs_audi" class="populer">Audi</option>
+                          <option value="8" id="qs_bmw" class="populer">BMW</option>
+                          <option value="23" id="qs_ford" class="populer">Ford</option>
+                          <option value="45" id="qs_mercedes-benz" class="populer">Mercedes-Benz</option>
+                          <option value="55" id="qs_nissan" class="populer">Nissan</option>
+                          <option value="57" id="qs_opel" class="populer">Opel</option>
+                          <option value="72" id="qs_skoda" class="populer">Skoda</option>
+                          <option value="79" id="qs_toyota" class="populer">Toyota</option>
+                          <option value="84" id="qs_volkswagen" class="populer">Volkswagen</option>
+                          <option value="85" id="qs_volvo" class="populer">Volvo</option>
+                      </optgroup>
+                      <optgroup label="A">
+                          <option value="456" id="qs_acura">Acura</option>
+                          <option value="339" id="qs_aleko">Aleko</option>
+                          <option value="1" id="qs_alfa-romeo">Alfa Romeo</option>
+                          <option value="89" id="qs_amc">AMC</option>
+                          <option value="2" id="qs_aston-martin">Aston Martin</option>
+                          <option value="431" id="qs_auburn">Auburn</option>
+                          <option value="4" id="qs_audi">Audi</option>
+                          <option value="5" id="qs_austin">Austin</option>
+                      </optgroup>
+                      <optgroup label="B">
+                          <option value="6" id="qs_bedford">Bedford</option>
+                          <option value="7" id="qs_bentley">Bentley</option>
+                          <option value="441" id="qs_bitter">Bitter</option>
+                          <option value="8" id="qs_bmw">BMW</option>
+                          <option value="208" id="qs_bmw-alpina">BMW Alpina</option>
+                          <option value="9" id="qs_buick">Buick</option>
+                      </optgroup>
+                      <optgroup label="C">
+                          <option value="10" id="qs_cadillac">Cadillac</option>
+                          <option value="468" id="qs_carlsson">Carlsson</option>
+                          <option value="11" id="qs_chevrolet">Chevrolet</option>
+                          <option value="12" id="qs_chrysler">Chrysler</option>
+                          <option value="13" id="qs_citroen">Citroen</option>
+                          <option value="14" id="qs_cobra">Cobra</option>
+                          <option value="427" id="qs_commer">Commer</option>
+                      </optgroup>
+                      <optgroup label="D">
+                          <option value="436" id="qs_dacia">Dacia</option>
+                          <option value="96" id="qs_daewoo">Daewoo</option>
+                          <option value="15" id="qs_daihatsu">Daihatsu</option>
+                          <option value="16" id="qs_daimler">Daimler</option>
+                          <option value="17" id="qs_datsun">Datsun</option>
+                          <option value="337" id="qs_datsun-nissan">Datsun-Nissan</option>
+                          <option value="281" id="qs_de-tomaso">De Tomaso</option>
+                          <option value="18" id="qs_desoto">DeSoto</option>
+                          <option value="194" id="qs_dkw">DKW</option>
+                          <option value="19" id="qs_dodge">Dodge</option>
+                          <option value="404" id="qs_donau">Donau</option>
+                          <option value="489" id="qs_ds">DS</option>
+                          <option value="501" id="qs_durant">Durant</option>
+                      </optgroup>
+                      <optgroup label="E">
+                          <option value="184" id="qs_edsel">Edsel</option>
+                      </optgroup>
+                      <optgroup label="F">
+                          <option value="21" id="qs_ferrari">Ferrari</option>
+                          <option value="22" id="qs_fiat">Fiat</option>
+                          <option value="478" id="qs_fiat-abarth">Fiat-Abarth</option>
+                          <option value="466" id="qs_fisker">Fisker</option>
+                          <option value="23" id="qs_ford">Ford</option>
+                          <option value="483" id="qs_fuso">Fuso</option>
+                      </optgroup>
+                      <optgroup label="G">
+                          <option value="26" id="qs_gaz">GAZ</option>
+                          <option value="497" id="qs_ginetta">Ginetta</option>
+                          <option value="27" id="qs_gmc">GMC</option>
+                          <option value="378" id="qs_goggomobil">Goggomobil</option>
+                          <option value="499" id="qs_goliath-express">Goliath Express</option>
+                      </optgroup>
+                      <optgroup label="H">
+                          <option value="328" id="qs_hillman">Hillman</option>
+                          <option value="29" id="qs_honda">Honda</option>
+                          <option value="448" id="qs_hudson">Hudson</option>
+                          <option value="91" id="qs_hummer">Hummer</option>
+                          <option value="30" id="qs_hyundai">Hyundai</option>
+                      </optgroup>
+                      <optgroup label="I">
+                          <option value="504" id="qs_imperial">Imperial</option>
+                          <option value="331" id="qs_infiniti">Infiniti</option>
+                          <option value="31" id="qs_isuzu">Isuzu</option>
+                          <option value="283" id="qs_iveco">Iveco</option>
+                      </optgroup>
+                      <optgroup label="J">
+                          <option value="32" id="qs_jaguar">Jaguar</option>
+                          <option value="33" id="qs_jeep">Jeep</option>
+                      </optgroup>
+                      <optgroup label="K">
+                          <option value="230" id="qs_kia">KIA</option>
+                      </optgroup>
+                      <optgroup label="L">
+                          <option value="34" id="qs_lada">Lada</option>
+                          <option value="35" id="qs_lamborghini">Lamborghini</option>
+                          <option value="36" id="qs_lancia">Lancia</option>
+                          <option value="37" id="qs_land-rover">Land Rover</option>
+                          <option value="38" id="qs_lexus">Lexus</option>
+                          <option value="39" id="qs_lincoln">Lincoln</option>
+                          <option value="327" id="qs_london-taxi">London taxi</option>
+                          <option value="40" id="qs_lotus">Lotus</option>
+                          <option value="474" id="qs_luaz">LuAZ</option>
+                      </optgroup>
+                      <optgroup label="M">
+                          <option value="88" id="qs_man">MAN</option>
+                          <option value="41" id="qs_maserati">Maserati</option>
+                          <option value="336" id="qs_maybach">Maybach</option>
+                          <option value="44" id="qs_mazda">Mazda</option>
+                          <option value="486" id="qs_mclaren">McLaren</option>
+                          <option value="45" id="qs_mercedes-benz">Mercedes-Benz</option>
+                          <option value="46" id="qs_mercury">Mercury</option>
+                          <option value="47" id="qs_mg">MG</option>
+                          <option value="335" id="qs_mg-rover">MG Rover</option>
+                          <option value="498" id="qs_mia-electric">MIA Electric</option>
+                          <option value="48" id="qs_mini">Mini</option>
+                          <option value="49" id="qs_mitsubishi">Mitsubishi</option>
+                          <option value="467" id="qs_mitsubishi-fuso">Mitsubishi Fuso</option>
+                          <option value="53" id="qs_morris">Morris</option>
+                          <option value="54" id="qs_moskvitsh">Moskvitsh</option>
+                          <option value="204" id="qs_muu-merkki">Muu merkki</option>
+                      </optgroup>
+                      <optgroup label="N">
+                          <option value="293" id="qs_neckar">Neckar</option>
+                          <option value="55" id="qs_nissan">Nissan</option>
+                      </optgroup>
+                      <optgroup label="O">
+                          <option value="56" id="qs_oldsmobile">Oldsmobile</option>
+                          <option value="57" id="qs_opel">Opel</option>
+                      </optgroup>
+                      <optgroup label="P">
+                          <option value="178" id="qs_packard">Packard</option>
+                          <option value="58" id="qs_peugeot">Peugeot</option>
+                          <option value="439" id="qs_pinzgauer">Pinzgauer</option>
+                          <option value="59" id="qs_plymouth">Plymouth</option>
+                          <option value="60" id="qs_pontiac">Pontiac</option>
+                          <option value="61" id="qs_porsche">Porsche</option>
+                      </optgroup>
+                      <optgroup label="R">
+                          <option value="62" id="qs_rambler">Rambler</option>
+                          <option value="64" id="qs_renault">Renault</option>
+                          <option value="500" id="qs_reo">Reo</option>
+                          <option value="426" id="qs_riley">Riley</option>
+                          <option value="65" id="qs_rolls-royce">Rolls-Royce</option>
+                          <option value="66" id="qs_rover">Rover</option>
+                      </optgroup>
+                      <optgroup label="S">
+                          <option value="67" id="qs_saab">Saab</option>
+                          <option value="234" id="qs_scania">Scania</option>
+                          <option value="69" id="qs_seat">Seat</option>
+                          <option value="70" id="qs_simca">Simca</option>
+                          <option value="505" id="qs_sisu">Sisu</option>
+                          <option value="72" id="qs_skoda">Skoda</option>
+                          <option value="73" id="qs_smart">Smart</option>
+                          <option value="74" id="qs_ssangyong">SsangYong</option>
+                          <option value="362" id="qs_standard">Standard</option>
+                          <option value="275" id="qs_studebaker">Studebaker</option>
+                          <option value="75" id="qs_subaru">Subaru</option>
+                          <option value="76" id="qs_sunbeam">Sunbeam</option>
+                          <option value="77" id="qs_suzuki">Suzuki</option>
+                      </optgroup>
+                      <optgroup label="T">
+                          <option value="78" id="qs_talbot">Talbot</option>
+                          <option value="437" id="qs_tesla">Tesla</option>
+                          <option value="450" id="qs_think">Think</option>
+                          <option value="79" id="qs_toyota">Toyota</option>
+                          <option value="303" id="qs_trabant">Trabant</option>
+                          <option value="80" id="qs_triumph">Triumph</option>
+                          <option value="298" id="qs_truckmasters">TruckMasters</option>
+                          <option value="340" id="qs_tvr">TVR</option>
+                      </optgroup>
+                      <optgroup label="U">
+                          <option value="334" id="qs_uaz">UAZ</option>
+                      </optgroup>
+                      <optgroup label="V">
+                          <option value="81" id="qs_vauxhall">Vauxhall</option>
+                          <option value="83" id="qs_volga">Volga</option>
+                          <option value="84" id="qs_volkswagen">Volkswagen</option>
+                          <option value="85" id="qs_volvo">Volvo</option>
+                      </optgroup>
+                      <optgroup label="W">
+                          <option value="86" id="qs_wartburg">Wartburg</option>
+                          <option value="422" id="qs_willys">Willys</option>
+                      </optgroup>
+                      <optgroup label="Z">
+                          <option value="455" id="qs_zaz">ZAZ</option>
+                      </optgroup>
+                  </select>
+                </div>
+              </div>
               <div class="input-field">
                 <div class="input-select">
                   <select data-trigger="" name="vehicle-type">
@@ -34,6 +228,34 @@
                     <option value="avolava">OPEN PLATFORM</option>
                     <option value="minibussi">MINIBUS</option>
                   </select>
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-select">
+                     <select data-trigger="" name="id_car_type">
+                          <option value="">BODY TYPE(Kaike)</option>
+                          <option value="9">Avoauto</option>
+                          <option value="12">Avolava</option>
+                          <option value="1">Coupé</option>
+                          <option value="48">Erillinen kuormatila</option>
+                          <option value="4">Farmari</option>
+                          <option value="52">Jatko-ohjaamo</option>
+                          <option value="18">Kilpa-ajoneuvo</option>
+                          <option value="43">Lyhyt - Korkea</option>
+                          <option value="49">Lyhyt - Matala</option>
+                          <option value="42">Lyhyt - Puolikorkea</option>
+                          <option value="5">Maastoauto</option>
+                          <option value="8">Muu</option>
+                          <option value="44">Pitkä - Korkea</option>
+                          <option value="51">Pitkä - Matala</option>
+                          <option value="45">Pitkä - Puolikorkea</option>
+                          <option value="2">Porrasperä</option>
+                          <option value="46">Puolipitkä - Korkea</option>
+                          <option value="50">Puolipitkä - Matala</option>
+                          <option value="47">Puolipitkä - Puolikorkea</option>
+                          <option value="7">Tila-auto</option>
+                          <option value="3">Viistoperä</option>
+                     </select>
                 </div>
               </div>
               <div class="input-field">
@@ -221,6 +443,259 @@
                     <option value="400000">400000</option>
                     <option value="450000">450000</option>
                     <option value="500000">500000</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="engine-min-form">
+                    <option value="">ENGINE STRENGTH FROM(MINIMI)</option>
+                    <option value="0.1">0.1</option>
+                    <option value="0.2">0.2</option>
+                    <option value="0.3">0.3</option>
+                    <option value="0.4">0.4</option>
+                    <option value="0.5">0.5</option>
+                    <option value="0.6">0.6</option>
+                    <option value="0.7">0.7</option>
+                    <option value="0.8">0.8</option>
+                    <option value="0.9">0.9</option>
+                    <option value="1.0">1.0</option>
+                    <option value="1.1">1.1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.3">1.3</option>
+                    <option value="1.4">1.4</option>
+                    <option value="1.5">1.5</option>
+                    <option value="1.6">1.6</option>
+                    <option value="1.7">1.7</option>
+                    <option value="1.8">1.8</option>
+                    <option value="1.9">1.9</option>
+                    <option value="2.0">2.0</option>
+                    <option value="2.1">2.1</option>
+                    <option value="2.2">2.2</option>
+                    <option value="2.3">2.3</option>
+                    <option value="2.4">2.4</option>
+                    <option value="2.5">2.5</option>
+                    <option value="2.6">2.6</option>
+                    <option value="2.7">2.7</option>
+                    <option value="2.8">2.8</option>
+                    <option value="2.9">2.9</option>
+                    <option value="3.0">3.0</option>
+                    <option value="3.1">3.1</option>
+                    <option value="3.2">3.2</option>
+                    <option value="3.3">3.3</option>
+                    <option value="3.4">3.4</option>
+                    <option value="3.5">3.5</option>
+                    <option value="3.6">3.6</option>
+                    <option value="3.7">3.7</option>
+                    <option value="3.8">3.8</option>
+                    <option value="3.9">3.9</option>
+                    <option value="4.0">4.0</option>
+                    <option value="4.1">4.1</option>
+                    <option value="4.2">4.2</option>
+                    <option value="4.3">4.3</option>
+                    <option value="4.4">4.4</option>
+                    <option value="4.5">4.5</option>
+                    <option value="4.6">4.6</option>
+                    <option value="4.7">4.7</option>
+                    <option value="4.8">4.8</option>
+                    <option value="4.9">4.9</option>
+                    <option value="5.0">5.0</option>
+                    <option value="5.1">5.1</option>
+                    <option value="5.2">5.2</option>
+                    <option value="5.3">5.3</option>
+                    <option value="5.4">5.4</option>
+                    <option value="5.5">5.5</option>
+                    <option value="5.6">5.6</option>
+                    <option value="5.7">5.7</option>
+                    <option value="5.8">5.8</option>
+                    <option value="5.9">5.9</option>
+                    <option value="6.0">6.0</option>
+                    <option value="6.1">6.1</option>
+                    <option value="6.2">6.2</option>
+                    <option value="6.3">6.3</option>
+                    <option value="6.4">6.4</option>
+                    <option value="6.5">6.5</option>
+                    <option value="6.6">6.6</option>
+                    <option value="6.7">6.7</option>
+                    <option value="6.8">6.8</option>
+                    <option value="6.9">6.9</option>
+                    <option value="7.0">7.0</option>
+                    <option value="7.1">7.1</option>
+                    <option value="7.2">7.2</option>
+                    <option value="7.3">7.3</option>
+                    <option value="7.4">7.4</option>
+                    <option value="7.5">7.5</option>
+                    <option value="7.6">7.6</option>
+                    <option value="7.7">7.7</option>
+                    <option value="7.8">7.8</option>
+                    <option value="7.9">7.9</option>
+                    <option value="8.0">8.0</option>
+                    <option value="8.1">8.1</option>
+                    <option value="8.2">8.2</option>
+                    <option value="8.3">8.3</option>
+                    <option value="8.4">8.4</option>
+                    <option value="8.5">8.5</option>
+                    <option value="8.6">8.6</option>
+                    <option value="8.7">8.7</option>
+                    <option value="8.8">8.8</option>
+                    <option value="8.9">8.9</option>
+                    <option value="9.0">9.0</option>
+                    <option value="9.1">9.1</option>
+                    <option value="9.2">9.2</option>
+                    <option value="9.3">9.3</option>
+                    <option value="9.4">9.4</option>
+                    <option value="9.5">9.5</option>
+                    <option value="9.6">9.6</option>
+                    <option value="9.7">9.7</option>
+                    <option value="9.8">9.8</option>
+                    <option value="9.9">9.9</option>
+                    <option value="10.0">10.0</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="engine-max-form">
+                    <option value="">ENGINE STRENGTH FROM(MAXIMI)</option>
+                    <option value="0.1">0.1</option>
+                    <option value="0.2">0.2</option>
+                    <option value="0.3">0.3</option>
+                    <option value="0.4">0.4</option>
+                    <option value="0.5">0.5</option>
+                    <option value="0.6">0.6</option>
+                    <option value="0.7">0.7</option>
+                    <option value="0.8">0.8</option>
+                    <option value="0.9">0.9</option>
+                    <option value="1.0">1.0</option>
+                    <option value="1.1">1.1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.3">1.3</option>
+                    <option value="1.4">1.4</option>
+                    <option value="1.5">1.5</option>
+                    <option value="1.6">1.6</option>
+                    <option value="1.7">1.7</option>
+                    <option value="1.8">1.8</option>
+                    <option value="1.9">1.9</option>
+                    <option value="2.0">2.0</option>
+                    <option value="2.1">2.1</option>
+                    <option value="2.2">2.2</option>
+                    <option value="2.3">2.3</option>
+                    <option value="2.4">2.4</option>
+                    <option value="2.5">2.5</option>
+                    <option value="2.6">2.6</option>
+                    <option value="2.7">2.7</option>
+                    <option value="2.8">2.8</option>
+                    <option value="2.9">2.9</option>
+                    <option value="3.0">3.0</option>
+                    <option value="3.1">3.1</option>
+                    <option value="3.2">3.2</option>
+                    <option value="3.3">3.3</option>
+                    <option value="3.4">3.4</option>
+                    <option value="3.5">3.5</option>
+                    <option value="3.6">3.6</option>
+                    <option value="3.7">3.7</option>
+                    <option value="3.8">3.8</option>
+                    <option value="3.9">3.9</option>
+                    <option value="4.0">4.0</option>
+                    <option value="4.1">4.1</option>
+                    <option value="4.2">4.2</option>
+                    <option value="4.3">4.3</option>
+                    <option value="4.4">4.4</option>
+                    <option value="4.5">4.5</option>
+                    <option value="4.6">4.6</option>
+                    <option value="4.7">4.7</option>
+                    <option value="4.8">4.8</option>
+                    <option value="4.9">4.9</option>
+                    <option value="5.0">5.0</option>
+                    <option value="5.1">5.1</option>
+                    <option value="5.2">5.2</option>
+                    <option value="5.3">5.3</option>
+                    <option value="5.4">5.4</option>
+                    <option value="5.5">5.5</option>
+                    <option value="5.6">5.6</option>
+                    <option value="5.7">5.7</option>
+                    <option value="5.8">5.8</option>
+                    <option value="5.9">5.9</option>
+                    <option value="6.0">6.0</option>
+                    <option value="6.1">6.1</option>
+                    <option value="6.2">6.2</option>
+                    <option value="6.3">6.3</option>
+                    <option value="6.4">6.4</option>
+                    <option value="6.5">6.5</option>
+                    <option value="6.6">6.6</option>
+                    <option value="6.7">6.7</option>
+                    <option value="6.8">6.8</option>
+                    <option value="6.9">6.9</option>
+                    <option value="7.0">7.0</option>
+                    <option value="7.1">7.1</option>
+                    <option value="7.2">7.2</option>
+                    <option value="7.3">7.3</option>
+                    <option value="7.4">7.4</option>
+                    <option value="7.5">7.5</option>
+                    <option value="7.6">7.6</option>
+                    <option value="7.7">7.7</option>
+                    <option value="7.8">7.8</option>
+                    <option value="7.9">7.9</option>
+                    <option value="8.0">8.0</option>
+                    <option value="8.1">8.1</option>
+                    <option value="8.2">8.2</option>
+                    <option value="8.3">8.3</option>
+                    <option value="8.4">8.4</option>
+                    <option value="8.5">8.5</option>
+                    <option value="8.6">8.6</option>
+                    <option value="8.7">8.7</option>
+                    <option value="8.8">8.8</option>
+                    <option value="8.9">8.9</option>
+                    <option value="9.0">9.0</option>
+                    <option value="9.1">9.1</option>
+                    <option value="9.2">9.2</option>
+                    <option value="9.3">9.3</option>
+                    <option value="9.4">9.4</option>
+                    <option value="9.5">9.5</option>
+                    <option value="9.6">9.6</option>
+                    <option value="9.7">9.7</option>
+                    <option value="9.8">9.8</option>
+                    <option value="9.9">9.9</option>
+                    <option value="10.0">10.0</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="id_domicile">
+                    <option value="" selected="selected">LOCATION (Kaikki)</option>
+                    <option class="select-dash" disabled="disabled">--------------------------</option>
+                    <option value="0" >Suomi</option>
+                    <option value="1" >Ahvenanmaa</option>
+                    <option value="8" >Etelä-Karjala</option>
+                    <option value="17" >Etelä-Pohjanmaa</option>
+                    <option value="7" >Etelä-Savo</option>
+                    <option value="4" >Kainuu</option>
+                    <option value="2" >Kanta-Häme</option>
+                    <option value="20" >Keski-Pohjanmaa</option>
+                    <option value="3" >Keski-Suomi</option>
+                    <option value="5" >Kymenlaakso</option>
+                    <option value="6" >Lappi</option>
+                    <option value="21" >Pirkanmaa</option>
+                    <option value="14" >Pohjanmaa</option>
+                    <option value="10" >Pohjois-Karjala</option>
+                    <option value="9" >Pohjois-Pohjanmaa</option>
+                    <option value="16" >Pohjois-Savo</option>
+                    <option value="23" >Päijät-Häme</option>
+                    <option value="24" >Satakunta</option>
+                    <option value="13" >Uusimaa</option>
+                    <option value="11" >Varsinais-Suomi</option>
+                    <option class="select-dash" disabled="disabled">--------------------------</option>
+                    <option value="15" >Ulkomaat</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-select">
+                  <select id="id_road_permit" name="road_permit" class="jqSelVal form-control">
+                      <option value="">ROAD PERMIT (Kaikki)</option>
+                      <option value="Y">Tieliikennekelpoinen</option>
+                      <option value="N">Ei tieliikennekelpoinen</option>
                   </select>
                 </div>
               </div>

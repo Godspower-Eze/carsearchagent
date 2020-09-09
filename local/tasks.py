@@ -171,6 +171,7 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist):
                                 print(searchlistlen)
                                 if searchlistlen - foundlen >= 1:
                                     print(searchlist)
+                                    print(foundlist)
                                     if pricerange[0] != 'None' and pricerange[1] != 'None':
                                         minn = pricerange[0]
                                         maxx = pricerange[1]
@@ -272,7 +273,6 @@ def searched_value_email_sender():
     pricerange = searching_values.pricerange
     searchlist = searching_values.searchlist
     for href in pages_list:
-        print('Working')
         context = (get_all_website_links(href, mileagerange, pricerange, searchlist))
         print(context)
         if context is not None:

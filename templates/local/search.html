@@ -21,7 +21,7 @@
             <div class="row">
               <div class="input-field">
                 <div class="input-select">
-                  <select data-trigger="" id="car-model"   name="id_make">
+                  <select data-trigger="" id="car-type"   name="id_make">
                       <option placeholder="">MAKE (Merkki)</option>
                       <optgroup label="Haetuimmat">
                           <option value="Audi" id="qs_audi" class="populer">Audi</option>
@@ -212,6 +212,13 @@
                   </select>
                 </div>
               </div>
+        <div class="input-field">
+            <div class="input-select">
+            <select id="car_model">
+				<option value="">Malli</option>
+			</select>
+            </div>
+        </div>
               <div class="input-field">
                 <div class="input-select">
                   <select data-trigger="" name="vehicle-type">
@@ -228,34 +235,6 @@
                     <option value="avolava">OPEN PLATFORM</option>
                     <option value="minibussi">MINIBUS</option>
                   </select>
-                </div>
-              </div>
-              <div class="input-field">
-                <div class="input-select">
-                     <select data-trigger="" name="id_car_type">
-                          <option placeholder="">BODY TYPE(Kaike)</option>
-                          <option value="9">Avoauto</option>
-                          <option value="12">Avolava</option>
-                          <option value="1">Coupé</option>
-                          <option value="48">Erillinen kuormatila</option>
-                          <option value="4">Farmari</option>
-                          <option value="52">Jatko-ohjaamo</option>
-                          <option value="18">Kilpa-ajoneuvo</option>
-                          <option value="43">Lyhyt - Korkea</option>
-                          <option value="49">Lyhyt - Matala</option>
-                          <option value="42">Lyhyt - Puolikorkea</option>
-                          <option value="5">Maastoauto</option>
-                          <option value="8">Muu</option>
-                          <option value="44">Pitkä - Korkea</option>
-                          <option value="51">Pitkä - Matala</option>
-                          <option value="45">Pitkä - Puolikorkea</option>
-                          <option value="2">Porrasperä</option>
-                          <option value="46">Puolipitkä - Korkea</option>
-                          <option value="50">Puolipitkä - Matala</option>
-                          <option value="47">Puolipitkä - Puolikorkea</option>
-                          <option value="7">Tila-auto</option>
-                          <option value="3">Viistoperä</option>
-                     </select>
                 </div>
               </div>
             </div>
@@ -760,6 +739,34 @@
                   </select>
                 </div>
               </div>
+                  <div class="input-field">
+                <div class="input-select">
+                     <select data-trigger="" name="id_car_type">
+                          <option placeholder="">BODY TYPE(Kaike)</option>
+                          <option value="9">Avoauto</option>
+                          <option value="12">Avolava</option>
+                          <option value="1">Coupé</option>
+                          <option value="48">Erillinen kuormatila</option>
+                          <option value="4">Farmari</option>
+                          <option value="52">Jatko-ohjaamo</option>
+                          <option value="18">Kilpa-ajoneuvo</option>
+                          <option value="43">Lyhyt - Korkea</option>
+                          <option value="49">Lyhyt - Matala</option>
+                          <option value="42">Lyhyt - Puolikorkea</option>
+                          <option value="5">Maastoauto</option>
+                          <option value="8">Muu</option>
+                          <option value="44">Pitkä - Korkea</option>
+                          <option value="51">Pitkä - Matala</option>
+                          <option value="45">Pitkä - Puolikorkea</option>
+                          <option value="2">Porrasperä</option>
+                          <option value="46">Puolipitkä - Korkea</option>
+                          <option value="50">Puolipitkä - Matala</option>
+                          <option value="47">Puolipitkä - Puolikorkea</option>
+                          <option value="7">Tila-auto</option>
+                          <option value="3">Viistoperä</option>
+                     </select>
+                </div>
+              </div>
               <div class="input-field">
                 <div class="input-select">
                   <select id="id_road_permit" name="road_permit" class="jqSelVal form-control">
@@ -886,11 +893,56 @@
     }
 </script>
 <script>
-    var selectedVal = document.getElementById('car-model')
+    var selectedVal = document.getElementById('car-type')
+    var selectedMod = document.getElementById('car-model')
     selectedVal.addEventListener('change',mySelectedVal)
     function mySelectedVal(){
-        if (){
-        }
+      if (selectedVal.value == 'Audi'){
+        selectedMod.innerHTML = '<option>Car Model</option>
+<option>80</option>
+<option>90</option>
+<option>100</option>
+<option>200</option>
+<option>A1</option>
+<option>A2</option>
+<option>A3</option>
+<option>A4</option>
+<option>A5</option>
+<option>A6</option>
+<option>A7</option>
+<option>A8</option>
+<option>Coupe</option>
+<option>E-tron</option>
+<option>Q2</option>
+<option>Q3</option>
+<option>Q4</option>
+<option>Q5</option>
+<option>Q6</option>
+<option>Q7</option>
+<option>Q8</option>
+<option>Quattro</option>
+<option>R8</option>
+<option>RS2</option>
+<option>RS3</option>
+<option>RS4</option>
+<option>RS5</option>
+<option>RS6</option>
+<option>RS7</option>
+<option>RSQ3</option>
+<option>S1</option>
+<option>S2</option>
+<option>S3</option>
+<option>S4</option>
+<option>S5</option>
+<option>S6</option>
+<option>S7</option>
+<option>S8</option>
+<option>SQ5</option>
+<option>SQ7</option>
+<option>TT</option>
+<option>V8</option>
+<option>Muut</option>'
+      }
     }
 </script>
   </body>

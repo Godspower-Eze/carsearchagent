@@ -1386,31 +1386,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var passedKeyCode = activeItems[0] && activeItems[0].keyCode ? activeItems[0].keyCode : null;
 	      var hasActiveDropdown = this.dropdown.classList.contains(this.config.classNames.activeState);
 
-	      // Update choice keyCode
-	      choice.keyCode = passedKeyCode;
-
-	      (0, _utils.triggerEvent)(this.passedElement, 'choice', {
-	        choice: choice
-	      });
-
-	      if (choice && !choice.selected && !choice.disabled) {
-	        var canAddItem = this._canAddItem(activeItems, choice.value);
-
-	        if (canAddItem.response) {
-	          this._addItem(choice.value, choice.label, choice.id, choice.groupId, choice.customProperties, choice.placeholder, choice.keyCode);
-	          this._triggerChange(choice.value);
-	        }
-	      }
-
-	      this.clearInput();
-
-	      // We wont to close the dropdown if we are dealing with a single select box
-	      if (hasActiveDropdown && this.isSelectOneElement) {
-	        this.hideDropdown();
-	        this.containerOuter.focus();
-	      }
-	    }
-
+//	      // Update choice keyCode
+//	      choice.keyCode = passedKeyCode;
+//
+//	      (0, _utils.triggerEvent)(this.passedElement, 'choice', {
+//	        choice: choice
+//	      });
+//
+//	      if (choice && !choice.selected && !choice.disabled) {
+//	        var canAddItem = this._canAddItem(activeItems, choice.value);
+//
+//	        if (canAddItem.response) {
+//	          this._addItem(choice.value, choice.label, choice.id, choice.groupId, choice.customProperties, choice.placeholder, choice.keyCode);
+//	          this._triggerChange(choice.value);
+//	        }
+//	      }
+//
+//	      this.clearInput();
+//
+//	      // We wont to close the dropdown if we are dealing with a single select box
+//	      if (hasActiveDropdown && this.isSelectOneElement) {
+//	        this.hideDropdown();
+//	        this.containerOuter.focus();
+//	      }
+//	    }
+//
 	    /**
 	     * Process back space event
 	     * @param  {Array} activeItems items

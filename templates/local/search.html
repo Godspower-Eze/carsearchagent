@@ -805,45 +805,45 @@
     </div>
     </div>
     </div>
-    <script src="{% static 'js/choices.js' %}"></script>
-    <script>
-      const customSelects = document.querySelectorAll("select");
-      const deleteBtn = document.getElementById('delete')
-      const choices = new Choices('select',
-      {
-        searchEnabled: false,
-        removeItemButton: true,
-        itemSelectText: '',
-      });
-      for (let i = 0; i < customSelects.length; i++)
-      {
-        customSelects[i].addEventListener('addItem', function(event)
-        {
-          if (event.detail.value)
-          {
-            let parent = this.parentNode.parentNode
-            parent.classList.add('valid')
-            parent.classList.remove('invalid')
-          }
-          else
-          {
-            let parent = this.parentNode.parentNode
-            parent.classList.add('invalid')
-            parent.classList.remove('valid')
-          }
-        }, false);
-      }
-      deleteBtn.addEventListener("click", function(e)
-      {
-        e.preventDefault()
-        const deleteAll = document.querySelectorAll('.choices__button')
-        for (let i = 0; i < deleteAll.length; i++)
-        {
-          deleteAll[i].click();
-        }
-      });
+<!--    <script src="{% static 'js/choices.js' %}"></script>-->
+<!--    <script>-->
+<!--      const customSelects = document.querySelectorAll("select");-->
+<!--      const deleteBtn = document.getElementById('delete')-->
+<!--      const choices = new Choices('select',-->
+<!--      {-->
+<!--        searchEnabled: false,-->
+<!--        removeItemButton: true,-->
+<!--        itemSelectText: '',-->
+<!--      });-->
+<!--      for (let i = 0; i < customSelects.length; i++)-->
+<!--      {-->
+<!--        customSelects[i].addEventListener('addItem', function(event)-->
+<!--        {-->
+<!--          if (event.detail.value)-->
+<!--          {-->
+<!--            let parent = this.parentNode.parentNode-->
+<!--            parent.classList.add('valid')-->
+<!--            parent.classList.remove('invalid')-->
+<!--          }-->
+<!--          else-->
+<!--          {-->
+<!--            let parent = this.parentNode.parentNode-->
+<!--            parent.classList.add('invalid')-->
+<!--            parent.classList.remove('valid')-->
+<!--          }-->
+<!--        }, false);-->
+<!--      }-->
+<!--      deleteBtn.addEventListener("click", function(e)-->
+<!--      {-->
+<!--        e.preventDefault()-->
+<!--        const deleteAll = document.querySelectorAll('.choices__button')-->
+<!--        for (let i = 0; i < deleteAll.length; i++)-->
+<!--        {-->
+<!--          deleteAll[i].click();-->
+<!--        }-->
+<!--      });-->
 
-    </script>
+<!--    </script>-->
   <script>
     let socket = new WebSocket("ws://127.0.0.1:8000/ws/search/")
     console.log(window.location)
@@ -893,57 +893,21 @@
     }
 </script>
 <script>
-    var selectedVal = document.getElementById('car-type')
-    var selectedMod = document.getElementById('car-model')
+        var selectedVal = document.getElementById('car-type')
+    var selectedMod = document.getElementById('car_model')
+    var nnum = document.getElementById('carr')
+    console.log(nnum)
+    console.log(selectedVal)
     selectedVal.addEventListener('change',mySelectedVal)
     function mySelectedVal(){
-      if (selectedVal.value == 'Audi'){
-        selectedMod.innerHTML = '<option>Car Model</option>
-<option>80</option>
-<option>90</option>
-<option>100</option>
-<option>200</option>
-<option>A1</option>
-<option>A2</option>
-<option>A3</option>
-<option>A4</option>
-<option>A5</option>
-<option>A6</option>
-<option>A7</option>
-<option>A8</option>
-<option>Coupe</option>
-<option>E-tron</option>
-<option>Q2</option>
-<option>Q3</option>
-<option>Q4</option>
-<option>Q5</option>
-<option>Q6</option>
-<option>Q7</option>
-<option>Q8</option>
-<option>Quattro</option>
-<option>R8</option>
-<option>RS2</option>
-<option>RS3</option>
-<option>RS4</option>
-<option>RS5</option>
-<option>RS6</option>
-<option>RS7</option>
-<option>RSQ3</option>
-<option>S1</option>
-<option>S2</option>
-<option>S3</option>
-<option>S4</option>
-<option>S5</option>
-<option>S6</option>
-<option>S7</option>
-<option>S8</option>
-<option>SQ5</option>
-<option>SQ7</option>
-<option>TT</option>
-<option>V8</option>
-<option>Muut</option>'
-      }
-    }
+        console.log(selectedVal)
+        if (selectedVal.value == 'Audi'){
+        console.log(selectedMod)
+          selectedMod.innerHTML = "<option value=''>Malli</option><option value='1'>80</option><option value='2'>90</option><option value='3'>100</option><option value='4'>200</option><option value='5'>A1</option><option value='6'>A2</option><option value='7'>A3</option><option value='8'>A4</option><option value='9'>A4 Allroad</option><option value='10'>A5</option><option value='11'>A6</option><option value='12'>A6 Allroad</option><option value='13'>A7</option><option value='14'>A8</option><option value='15'>Coupe</option><option value='42'>E-tron</option><option value='16'>Q2</option><option value='17'>Q3</option><option value='18'>Q5</option><option value='19'>Q7</option><option value='41'>Q8</option><option value='20'>Quattro</option><option value='21'>R8</option><option value='22'>RS2</option><option value='23'>RS3</option><option value='24'>RS4</option><option value='25'>RS5</option><option value='26'>RS6</option><option value='27'>RS7</option><option value='28'>RSQ3</option><option value='29'>S1</option><option value='30'>S2</option><option value='31'>S3</option><option value='32'>S4</option><option value='33'>S5</option><option value='34'>S6</option><option value='35'>S7</option><option value='36'>S8</option><option value='37'>SQ5</option><option value='38'>SQ7</option><option value='39'>TT</option><option value='40'>V8</option><option value='0'>Muut</option>"
+          console.log(selectedMod)
+          console.log(document.getElementById('car_model'))
+     }
+   }
 </script>
   </body>
 </html>

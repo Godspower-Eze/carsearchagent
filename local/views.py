@@ -49,6 +49,14 @@ def search(request):
             max_mileage = None
         else:
             max_mileage = int(max_mileage)
+        car = request.POST.get('id_make')
+        if car == 'MAKE (Merkki)':
+            car = None
+        print(car)
+        carmodel = request.POST.get('car_model')
+        if carmodel == 'Malli':
+            carmodel = None
+        print(carmodel)
         airconditioner = request.POST.get('air-conditioning')
         servicebook = request.POST.get('service-book')
         cruisecontrol = request.POST.get('cruise-control')
@@ -64,7 +72,7 @@ def search(request):
         towbar = request.POST.get('towbar')
         metalliccolor = request.POST.get('metallic-color')
         year_model = [year_model_min, year_model_max]
-        searchlist = [vehicle_type, gearing, fuel, airconditioner, servicebook, cruisecontrol,
+        searchlist = [vehicle_type, gearing, car, carmodel, fuel, airconditioner, servicebook, cruisecontrol,
                       isofixreadiness, leatherupholstery, internalplug, twotires, parkingsensors,
                       xenonheadlights, ledheadlights, webastoeber, towbar, metalliccolor]
         mileagerange = [min_mileage, max_mileage]

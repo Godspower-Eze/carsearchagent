@@ -13,7 +13,7 @@
   <body>
   <div><button><a href="{% url 'cars' %}" class="btn-search">Back To Home</a></button></div>
     <div class="s008">
-      form method="post">
+      <form method="post">
         {% csrf_token %}
         <div class="innerform">
           <div class="advance-search">
@@ -711,100 +711,99 @@
                 </div>
               </div>
             </div>
-              <div class="row seven">
-                      <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="air-conditioning" name="air-conditioning" value="Air conditioning">
-                            <labelfor="Air-conditioning">Air conditioning</label><br>
-                        </div>
-                      </div>
-                  <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="service-book" name="service-book" value="Service book">
-                            <labelfor="service-book">Service book</label><br>
-                        </div>
-                      </div>
-                  <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="cruise-control" name="cruise-control" value="Cruise control">
-                            <labelfor="cruise-control">Cruise control</label><br>
-                        </div>
-                      </div>
-              </div>
-              <div class="row eight">
-                  <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="isofix-readiness" name="isofix-readiness" value="Isofix readiness">
-                            <labelfor="isofix-readiness">Isofix readiness</label><br>
-                        </div>
-                      </div>
-                  <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="leather-upholstery" name="leather-upholstery" value="Leather upholstery">
-                            <labelfor="leather-upholstery">Leather upholstery</label><br>
-                        </div>
-                      </div>
-                  <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="motor-heater" name="motor-heater" value="Motor heater">
-                            <labelfor="motor-heater">Motor heater</label><br>
-                        </div>
-                      </div>
-              </div>
-              <div class="row nine">
-                  <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="internal-plug" name="internal-plug" value="Internal plug">
-                            <labelfor="internal-plug">Internal plug</label><br>
-                        </div>
-                      </div>
-                  <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="two-tires" name="two-tires" value="Two tires">
-                            <labelfor="two-tires">Two tires</label><br>
-                        </div>
-                      </div>
-                  <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="towbar" name="towbar" value="Towbar">
-                            <labelfor="towbar">Towbar</label><br>
-                        </div>
-                      </div>
-              </div>
-              <div class="row ten">
-                  <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="metallic-color" name="metallic-color" value="Metallic color">
-                            <labelfor="metallic-color">Metallic color</label><br>
-                        </div>
-                      </div>
-                  <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="parking-sensors" name="parking-sensors" value="Parking sensors">
-                            <labelfor="parking-sensors">Parking sensors</label><br>
-                        </div>
-                      </div>
-                  <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="xenon-headlights" name="xenon-headlights" value="Xenon headlights">
-                            <labelfor="xenon-headlights">Xenon headlights</label><br>
-                        </div>
-                      </div>
-              </div>
-              <div class="row eleven">
-                  <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="led-headlights" name="led-headlights" value="LED headlights">
-                            <labelfor="led-headlights">LED headlights</label><br>
-                        </div>
-                      </div>
-                  <div class="input-field">
-                        <div class="input-select">
-                            <input type="checkbox" id="webasto-eber" name="webasto-eber" value="Webasto / Eber">
-                            <labelfor="webasto-eber">Webasto / Eber</label><br>
-                        </div>
-                      </div>
-              </div>
+<!--              <div class="row seven">-->
+<!--                      <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="air-conditioning" name="air-conditioning" value="Air conditioning">-->
+<!--                            <labelfor="Air-conditioning">Air conditioning</label><br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                  <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="service-book" name="service-book" value="Service book">-->
+<!--                            <labelfor="service-book">Service book</label><br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                  <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="cruise-control" name="cruise-control" value="Cruise control">-->
+<!--                            <labelfor="cruise-control">Cruise control</label><br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--              </div>-->
+<!--              <div class="row eight">-->
+<!--                  <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="isofix-readiness" name="isofix-readiness" value="Isofix readiness">-->
+<!--                            <labelfor="isofix-readiness">Isofix readiness</label><br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                  <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="leather-upholstery" name="leather-upholstery" value="Leather upholstery">-->
+<!--                            <labelfor="leather-upholstery">Leather upholstery</label><br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                  <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="motor-heater" name="motor-heater" value="Motor heater">-->
+<!--                            <labelfor="motor-heater">Motor heater</label><br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--              </div>-->
+<!--              <div class="row nine">-->
+<!--                  <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="internal-plug" name="internal-plug" value="Internal plug">-->
+<!--                            <labelfor="internal-plug">Internal plug</label><br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                  <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="two-tires" name="two-tires" value="Two tires">-->
+<!--                            <labelfor="two-tires">Two tires</label><br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                  <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="towbar" name="towbar" value="Towbar">-->
+<!--                            <labelfor="towbar">Towbar</label><br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--              </div>-->
+<!--              <div class="row ten">-->
+<!--                  <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="metallic-color" name="metallic-color" value="Metallic color">-->
+<!--                            <labelfor="metallic-color">Metallic color</label><br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                  <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="parking-sensors" name="parking-sensors" value="Parking sensors">-->
+<!--                            <labelfor="parking-sensors">Parking sensors</label><br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                  <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="xenon-headlights" name="xenon-headlights" value="Xenon headlights">-->
+<!--                            <labelfor="xenon-headlights">Xenon headlights</label><br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--              </div>-->
+<!--              <div class="row eleven">-->
+<!--                  <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="led-headlights" name="led-headlights" value="LED headlights">-->
+<!--                            <labelfor="led-headlights">LED headlights</label><br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                  <div class="input-field">-->
+<!--                        <div class="input-select">-->
+<!--                            <input type="checkbox" id="webasto-eber" name="webasto-eber" value="Webasto / Eber">-->
+<!--                            <labelfor="webasto-eber">Webasto / Eber</label><br>-->
+<!--                      </div>-->
+<!--              </div>-->
             <div class="row third">
               <div class="input-field">
                 <div class="result-count">
@@ -817,7 +816,7 @@
             </div>
           </div>
         </div>
-      <form>
+      </form>
     </div>
     <div id="main">
       <div class="inner">

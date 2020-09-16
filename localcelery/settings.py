@@ -81,22 +81,22 @@ TEMPLATES = [
 
 ASGI_APPLICATION = 'localcelery.routing.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'caragent',
-#         'USER': 'godspower',
-#         'PASSWORD': 'Eminentfablous50',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'caragent',
+        'USER': 'godspower',
+        'PASSWORD': 'Eminentfablous50',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -141,6 +141,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # Use CELERY_ prefix
 
 # CELERY_ENABLE_UTC = True
+CELERY_TIMEZONE = 'Europe/Finland'
 
 CELERY_ACCEPT_CONTENT = ['application/json']
 

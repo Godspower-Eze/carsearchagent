@@ -33,9 +33,12 @@ def search(request):
             max_price = None
         else:
             max_price = int(max_price)
-        year_model = request.POST.get('year-model')
-        if year_model == 'YEAR MODEL':
-            year_model = None
+        year_model_min = request.POST.get('year-model-min')
+        if year_model_min == 'YEAR MODEL(MIN)':
+            year_model_min = None
+        year_model_max = request.POST.get('year-model-max')
+        if year_model_max == 'YEAR MODEL(MAX)':
+            year_model_max = None
         min_mileage = request.POST.get('min-mileage')
         if min_mileage == 'MIN MILEAGE':
             min_mileage = None
@@ -46,17 +49,35 @@ def search(request):
             max_mileage = None
         else:
             max_mileage = int(max_mileage)
-        searchlist = [vehicle_type, gearing, fuel, year_model]
+        airconditioner = request.POST.get('air-conditioning')
+        servicebook = request.POST.get('service-book')
+        cruisecontrol = request.POST.get('cruise-control')
+        isofixreadiness = request.POST.get('isofix-readiness')
+        leatherupholstery = request.POST.get('leather-upholstery')
+        motorheater = request.POST.get('motor-heater')
+        internalplug = request.POST.get('internal-plug')
+        twotires = request.POST.get('two-tires')
+        parkingsensors = request.POST.get('parking-sensors')
+        xenonheadlights = request.POST.get('xenon-headlights')
+        ledheadlights = request.POST.get('led-headlights')
+        webastoeber = request.POST.get('webasto-eber')
+        towbar = request.POST.get('towbar')
+        metalliccolor = request.POST.get('metallic-color')
+        year_model = [year_model_min, year_model_max]
+        searchlist = [vehicle_type, gearing, fuel, airconditioner, servicebook, cruisecontrol,
+                      isofixreadiness, leatherupholstery, internalplug, twotires, parkingsensors,
+                      xenonheadlights, ledheadlights, webastoeber, towbar, metalliccolor]
         mileagerange = [min_mileage, max_mileage]
         pricerange = [min_price, max_price]
         searched_value_sender.delay(mileagerange, pricerange, searchlist)
-        searched = SearchedValue(searchlist=searchlist, mileagerange=mileagerange, pricerange=pricerange)
+        searched = SearchedValue(searchlist=searchlist, mileagerange=mileagerange, pricerange=pricerange,
+                                 yearmodel=year_model)
         searched.save()
         searching_values = SearchedValue.objects.last()
         mileagerange = searching_values.mileagerange
         pricerange = searching_values.pricerange
         searchlist = searching_values.searchlist
-        deletedvalue = SearchedValue.objects.get(id=searching_values.id-1)
+        deletedvalue = SearchedValue.objects.get(id=searching_values.id - 1)
         deletedvalue.delete()
     return render(request, 'local/search.html')
 

@@ -13,9 +13,9 @@
   <body>
   <div><button><a href="{% url 'cars' %}" class="btn-search">Back To Home</a></button></div>
     <div class="s008">
-      <form method="post">
+      form method="post">
         {% csrf_token %}
-        <div class="inner-form">
+        <div class="innerform">
           <div class="advance-search">
             <span class="desc">Advanced Search</span>
             <div class="row">
@@ -26,7 +26,7 @@
                       <optgroup label="Haetuimmat">
                           <option value="Audi" id="qs_audi" class="populer">Audi</option>
                           <option value="BMW" id="qs_bmw" class="populer">BMW</option>
-                          <option value="Ford" id="qs_ford" class="populer">Ford</option>
+                          <option value=Ford" id="qsford" class="populer"Ford</option>
                           <option value="Mercedes-Benz" id="qs_mercedes-benz" class="populer">Mercedes-Benz</option>
                           <option value="Nissan" id="qs_nissan" class="populer">Nissan</option>
                           <option value="Opel" id="qs_opel" class="populer">Opel</option>
@@ -63,7 +63,7 @@
                       <optgroup label="F">
                           <option value="Ferrari" id="qs_ferrari">Ferrari</option>
                           <option value="Fiat" id="qs_fiat">Fiat</option>
-                          <option value="Ford" id="qs_ford">Ford</option>
+                          <option value=Ford" id="qsford"Ford</option>
                       </optgroup>
                       <optgroup label="G">
                           <option value="GAZ" id="qs_gaz">GAZ</option>
@@ -166,7 +166,7 @@
                     <option value="tila-auto">MINIVAN</option>
                     <option value="monikäyttö">MULTIPURPOSE</option>
                     <option value="maasturi">SUV</option>
-                    <option value="avolava">OPEN PLATFORM</option>
+                    <option value="avolava">OPEN PLAFORM</option>
                     <option value="minibussi">MINIBUS</option>
                   </select>
                 </div>
@@ -197,7 +197,7 @@
               </div>
                 <div class="input-field">
                 <div class="input-select">
-                  <select data-trigger="" name="year-model">
+                  <select data-trigger="" name="year-model-min">
                     <option placeholder="">YEAR MODEL(MIN)</option>
                     <option value="1980">1980</option>
                     <option value="1981">1981</option>
@@ -244,7 +244,7 @@
               </div>
               <div class="input-field">
                 <div class="input-select">
-                  <select data-trigger="" name="year-model">
+                  <select data-trigger="" name="year-model-max">
                     <option placeholder="">YEAR MODEL(MAX)</option>
                     <option value="1980">1980</option>
                     <option value="1981">1981</option>
@@ -429,7 +429,7 @@
                 <div class="row fifth">
                   <div class="input-field">
                 <div class="input-select">
-                  <select data-trigger="" name="engine-min-form">
+                  <select data-trigger="" name="engine-minform">
                     <option placeholder="">ENGINE STRENGTH FROM(MINIMI)</option>
                     <option value="0.1">0.1</option>
                     <option value="0.2">0.2</option>
@@ -536,7 +536,7 @@
               </div>
               <div class="input-field">
                 <div class="input-select">
-                  <select data-trigger="" name="engine-max-form">
+                  <select data-trigger="" name="engine-maxform">
                     <option placeholder="">ENGINE STRENGTH FROM(MAXIMI)</option>
                     <option value="0.1">0.1</option>
                     <option value="0.2">0.2</option>
@@ -703,7 +703,7 @@
               </div>
               <div class="input-field">
                 <div class="input-select">
-                  <select id="id_road_permit" name="road_permit" class="jqSelVal form-control">
+                  <select id="id_road_permit" name="road_permit" class="jqSelValform-control">
                       <option placeholder="">ROAD PERMIT (Kaikki)</option>
                       <option value="Y">Tieliikennekelpoinen</option>
                       <option value="N">Ei tieliikennekelpoinen</option>
@@ -711,6 +711,100 @@
                 </div>
               </div>
             </div>
+              <div class="row seven">
+                      <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="air-conditioning" name="air-conditioning" value="Air conditioning">
+                            <labelfor="Air-conditioning">Air conditioning</label><br>
+                        </div>
+                      </div>
+                  <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="service-book" name="service-book" value="Service book">
+                            <labelfor="service-book">Service book</label><br>
+                        </div>
+                      </div>
+                  <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="cruise-control" name="cruise-control" value="Cruise control">
+                            <labelfor="cruise-control">Cruise control</label><br>
+                        </div>
+                      </div>
+              </div>
+              <div class="row eight">
+                  <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="isofix-readiness" name="isofix-readiness" value="Isofix readiness">
+                            <labelfor="isofix-readiness">Isofix readiness</label><br>
+                        </div>
+                      </div>
+                  <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="leather-upholstery" name="leather-upholstery" value="Leather upholstery">
+                            <labelfor="leather-upholstery">Leather upholstery</label><br>
+                        </div>
+                      </div>
+                  <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="motor-heater" name="motor-heater" value="Motor heater">
+                            <labelfor="motor-heater">Motor heater</label><br>
+                        </div>
+                      </div>
+              </div>
+              <div class="row nine">
+                  <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="internal-plug" name="internal-plug" value="Internal plug">
+                            <labelfor="internal-plug">Internal plug</label><br>
+                        </div>
+                      </div>
+                  <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="two-tires" name="two-tires" value="Two tires">
+                            <labelfor="two-tires">Two tires</label><br>
+                        </div>
+                      </div>
+                  <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="towbar" name="towbar" value="Towbar">
+                            <labelfor="towbar">Towbar</label><br>
+                        </div>
+                      </div>
+              </div>
+              <div class="row ten">
+                  <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="metallic-color" name="metallic-color" value="Metallic color">
+                            <labelfor="metallic-color">Metallic color</label><br>
+                        </div>
+                      </div>
+                  <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="parking-sensors" name="parking-sensors" value="Parking sensors">
+                            <labelfor="parking-sensors">Parking sensors</label><br>
+                        </div>
+                      </div>
+                  <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="xenon-headlights" name="xenon-headlights" value="Xenon headlights">
+                            <labelfor="xenon-headlights">Xenon headlights</label><br>
+                        </div>
+                      </div>
+              </div>
+              <div class="row eleven">
+                  <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="led-headlights" name="led-headlights" value="LED headlights">
+                            <labelfor="led-headlights">LED headlights</label><br>
+                        </div>
+                      </div>
+                  <div class="input-field">
+                        <div class="input-select">
+                            <input type="checkbox" id="webasto-eber" name="webasto-eber" value="Webasto / Eber">
+                            <labelfor="webasto-eber">Webasto / Eber</label><br>
+                        </div>
+                      </div>
+              </div>
             <div class="row third">
               <div class="input-field">
                 <div class="result-count">
@@ -723,7 +817,7 @@
             </div>
           </div>
         </div>
-      </form>
+      <form>
     </div>
     <div id="main">
       <div class="inner">
@@ -749,7 +843,7 @@
 <!--        removeItemButton: true,-->
 <!--        itemSelectText: '',-->
 <!--      });-->
-<!--      for (let i = 0; i < customSelects.length; i++)-->
+<!--     for (let i = 0; i < customSelects.length; i++)-->
 <!--      {-->
 <!--        customSelects[i].addEventListener('addItem', function(event)-->
 <!--        {-->
@@ -771,7 +865,7 @@
 <!--      {-->
 <!--        e.preventDefault()-->
 <!--        const deleteAll = document.querySelectorAll('.choices__button')-->
-<!--        for (let i = 0; i < deleteAll.length; i++)-->
+<!--       for (let i = 0; i < deleteAll.length; i++)-->
 <!--        {-->
 <!--          deleteAll[i].click();-->
 <!--        }-->
@@ -827,13 +921,13 @@
     }
 </script>
 <script>
-    var options = getElementsByTagName('option')
-    options.forEach(function(item,index){
-        item.style.color = "black";
-    })
+    var options = document.getElementsByTagName('option')
+   for(i=0; i<options.length;i++){
+        options[i].style.color = "black"
+    }
     var audi = "<option value=''>Malli</option><option value='1'>80</option><option value='2'>90</option><option value='3'>100</option><option value='4'>200</option><option value='5'>A1</option><option value='6'>A2</option><option value='7'>A3</option><option value='8'>A4</option><option value='9'>A4 Allroad</option><option value='10'>A5</option><option value='11'>A6</option><option value='12'>A6 Allroad</option><option value='13'>A7</option><option value='14'>A8</option><option value='15'>Coupe</option><option value='42'>E-tron</option><option value='16'>Q2</option><option value='17'>Q3</option><option value='18'>Q5</option><option value='19'>Q7</option><option value='41'>Q8</option><option value='20'>Quattro</option><option value='21'>R8</option><option value='22'>RS2</option><option value='23'>RS3</option><option value='24'>RS4</option><option value='25'>RS5</option><option value='26'>RS6</option><option value='27'>RS7</option><option value='28'>RSQ3</option><option value='29'>S1</option><option value='30'>S2</option><option value='31'>S3</option><option value='32'>S4</option><option value='33'>S5</option><option value='34'>S6</option><option value='35'>S7</option><option value='36'>S8</option><option value='37'>SQ5</option><option value='38'>SQ7</option><option value='39'>TT</option><option value='40'>V8</option><option value='0'>Muut</option>"
     var bmw = "<option value=''>Malli</option><option value='1'>1-sarja</option><option value='2'>2-sarja</option><option value='3'>3-sarja</option><option value='4'>4-sarja</option><option value='5'>5-sarja</option><option value='6'>6-sarja</option><option value='7'>7-sarja</option><option value='8'>8-sarja</option><option value='18'>M-mallit</option><option value='9'>X1</option><option value='10'>X2</option><option value='11'>X3</option><option value='12'>X4</option><option value='13'>X5</option><option value='14'>X6</option><option value='15'>X7</option><option value='16'>ActiveHybrid X6</option><option value='17'>Z-sarja</option><option value='19'>i-sarja</option><option value='20'>Alpina</option><option value='0'>Muut</option>"
-    var ford = "<option value='59'>20M</option><option value='21'>A-Ford</option><option value='22'>Aerostar</option><option value='60'>Anglia</option><option value='52'>B-Max</option><option value='23'>Bronco</option><option value='53'>C-Max</option><option value='56'>Capri</option><option value='20'>Cougar</option><option value='61'>Consul</option><option value='62'>Cortina</option><option value='24'>Country</option><option value='63'>Coupe</option><option value='25'>Courier</option><option value='26'>Crown Victoria</option><option value='64'>Custom</option><option value='65'>De Luxe</option><option value='27'>Econoline</option><option value='55'>Ecosport</option><option value=''>Malli</option><option value='54'>Edge</option><option value='28'>Edsel</option><option value='29'>Escape</option><option value='13'>Escort</option><option value='67'>Escort Express</option><option value='66'>Elite</option><option value='30'>Excursion</option><option value='31'>Expedition</option><option value='32'>Express</option><option value='33'>Explorer</option><option value='51'>F-Series</option><option value='34'>Fairlane</option><option value='68'>Fairmont</option><option value='35'>Falcon</option><option value='1'>Fiesta</option><option value='69'>Fiesta Van</option><option value='70'>Flex</option><option value='2'>Focus</option><option value='71'>Freestar</option><option value='36'>Freestyle</option><option value='3'>Fusion</option><option value='37'>Galaxie</option><option value='4'>Galaxy</option><option value='38'>Granada</option><option value='5'>GT</option><option value='72'>Junior</option><option value='6'>Ka</option><option value='79'>StreetKa</option><option value='11'>Kuga</option><option value='73'>Lincoln</option><option value='74'>LTD</option><option value='16'>Maverick</option><option value='39'>Mercury</option><option value='7'>Mondeo</option><option value='8'>Mustang</option><option value='19'>Orion</option><option value='75'>P100</option><option value='76'>Prefect</option><option value='40'>Probe</option><option value='41'>Puma</option><option value='77'>Ranchero</option><option value='14'>Ranger</option><option value='17'>Scorpio</option><option value='18'>Sierra</option><option value='9'>S-Max</option><option value='78'>Standard</option><option value='50'>Super</option><option value='42'>T-Ford</option><option value='43'>Taunus</option><option value='44'>Taurus</option><option value='45'>Thunderbird</option><option value='46'>Torino</option><option value='10'>Tourneo</option><option value='80'>Tourneo Connect</option><option value='81'>Grand Tourneo Connect</option><option value='82'>Tourneo Courier</option><option value='83'>Tourneo Custom</option><option value='12'>Transit</option><option value='84'>Transit Connect</option><option value='85'>Transit Courier</option><option value='86'>Transit Custom</option><option value='47'>Tudor</option><option value='48'>Van</option><option value='15'>Windstar</option><option value='49'>Zephyr</option><option value='0'>Muut</option>"
+    varford = "<option value='59'>20M</option><option value='21'>AFord</option><option value='22'>Aerostar</option><option value='60'>Anglia</option><option value='52'>B-Max</option><option value='23'>Bronco</option><option value='53'>C-Max</option><option value='56'>Capri</option><option value='20'>Cougar</option><option value='61'>Consul</option><option value='62'>Cortina</option><option value='24'>Country</option><option value='63'>Coupe</option><option value='25'>Courier</option><option value='26'>Crown Victoria</option><option value='64'>Custom</option><option value='65'>De Luxe</option><option value='27'>Econoline</option><option value='55'>Ecosport</option><option value=''>Malli</option><option value='54'>Edge</option><option value='28'>Edsel</option><option value='29'>Escape</option><option value='13'>Escort</option><option value='67'>Escort Express</option><option value='66'>Elite</option><option value='30'>Excursion</option><option value='31'>Expedition</option><option value='32'>Express</option><option value='33'>Explorer</option><option value='51'>F-Series</option><option value='34'>Fairlane</option><option value='68'>Fairmont</option><option value='35'>Falcon</option><option value='1'>Fiesta</option><option value='69'>Fiesta Van</option><option value='70'>Flex</option><option value='2'>Focus</option><option value='71'>Freestar</option><option value='36'>Freestyle</option><option value='3'>Fusion</option><option value='37'>Galaxie</option><option value='4'>Galaxy</option><option value='38'>Granada</option><option value='5'>GT</option><option value='72'>Junior</option><option value='6'>Ka</option><option value='79'>StreetKa</option><option value='11'>Kuga</option><option value='73'>Lincoln</option><option value='74'>LTD</option><option value='16'>Maverick</option><option value='39'>Mercury</option><option value='7'>Mondeo</option><option value='8'>Mustang</option><option value='19'>Orion</option><option value='75'>P100</option><option value='76'>Prefect</option><option value='40'>Probe</option><option value='41'>Puma</option><option value='77'>Ranchero</option><option value='14'>Ranger</option><option value='17'>Scorpio</option><option value='18'>Sierra</option><option value='9'>S-Max</option><option value='78'>Standard</option><option value='50'>Super</option><option value='42'>TFord</option><option value='43'>Taunus</option><option value='44'>Taurus</option><option value='45'>Thunderbird</option><option value='46'>Torino</option><option value='10'>Tourneo</option><option value='80'>Tourneo Connect</option><option value='81'>Grand Tourneo Connect</option><option value='82'>Tourneo Courier</option><option value='83'>Tourneo Custom</option><option value='12'>Transit</option><option value='84'>Transit Connect</option><option value='85'>Transit Courier</option><option value='86'>Transit Custom</option><option value='47'>Tudor</option><option value='48'>Van</option><option value='15'>Windstar</option><option value='49'>Zephyr</option><option value='0'>Muut</option>"
     var mercedesBenz = "<option value=''>Malli</option><option value='35'>115</option><option value='36'>170</option><option value='37'>180</option><option value='38'>190</option><option value='39'>200</option><option value='40'>220</option><option value='41'>230</option><option value='42'>240</option><option value='43'>250</option><option value='44'>260</option><option value='45'>270</option><option value='46'>280</option><option value='47'>290</option><option value='48'>300</option><option value='49'>320</option><option value='50'>350</option><option value='51'>380</option><option value='52'>400</option><option value='53'>420</option><option value='54'>450</option><option value='55'>500</option><option value='56'>560</option><option value='57'>600</option><option value='1'>A-sarja</option><option value='21'>AMG GT</option><option value='2'>B-sarja</option><option value='3'>C-sarja</option><option value='23'>CE</option><option value='24'>Citan</option><option value='4'>E-sarja</option><option value='5'>CL</option><option value='25'>CLA</option><option value='6'>CLC</option><option value='7'>CLK</option><option value='8'>CLS</option><option value='9'>G-sarja</option><option value='10'>GL</option><option value='26'>GLA</option><option value='27'>GLC</option><option value='28'>GLE</option><option value='11'>GLK</option><option value='29'>GLS</option><option value='12'>ML</option><option value='13'>R-sarja</option><option value='14'>S-sarja</option><option value='15'>SL</option><option value='30'>SLC</option><option value='16'>SLK</option><option value='17'>SLR</option><option value='18'>SLS AMG</option><option value='20'>Sprinter</option><option value='31'>Vaneo</option><option value='32'>Vario</option><option value='33'>Viano</option><option value='34'>Vito</option><option value='19'>V-sarja</option><option value='20'>Sprinter</option><option value='58'>X-sarja</option><option value='0'>Muut</option>"
     var nissan = "<option value=''>Malli</option><option value='20'>100NX</option><option value='18'>200SX</option><option value='21'>240SX</option><option value='19'>300ZX</option><option value='1'>350Z</option><option value='2'>370Z</option><option value='3'>Almera</option><option value='23'>Almera Tino</option><option value='24'>Bluebird</option><option value='25'>Cedric</option><option value='26'>Cherry</option><option value='27'>Cube</option><option value='28'>e-NV200</option><option value='4'>GT-R</option><option value='29'>Interstar</option><option value='30'>Juke</option><option value='16'>King Cab</option><option value='5'>Kubistar</option><option value='32'>Laurel</option><option value='33'>Leaf</option><option value='6'>Maxima</option><option value='7'>Micra</option><option value='8'>Murano</option><option value='31'>Navara</option><option value='9'>Note</option><option value='34'>NP300</option><option value='35'>NV200</option><option value='47'>NV300</option><option value='36'>NV400</option><option value='10'>Pathfinder</option><option value='11'>Patrol</option><option value='37'>Pickup</option><option value='22'>Primastar</option><option value='12'>Primera</option><option value='38'>Pulsar</option><option value='13'>Qashqai</option><option value='39'>Qashqai+2</option><option value='40'>Quest</option><option value='41'>Silvia</option><option value='42'>Skyline</option><option value='43'>Stagea</option><option value='17'>Sunny</option><option value='14'>Terrano</option><option value='44'>Terrano II</option><option value='45'>Tiida</option><option value='46'>Vanette</option><option value='15'>X-Trail</option><option value='0'>Muut</option>"
     var opel = "<option value=''>Malli</option><option value='24'>Adam</option><option value='1'>Agila</option><option value='25'>Ampera</option><option value='2'>Antara</option><option value='21'>Ascona</option><option value='3'>Astra</option><option value='17'>Calibra</option><option value='26'>Campo</option><option value='27'>Cascada</option><option value='4'>Combo</option><option value='28'>Commodore</option><option value='5'>Corsa</option><option value='29'>Corsavan</option><option value='36'>Crossland X</option><option value='6'>Frontera</option><option value='37'>Grandland X</option><option value='7'>GT</option><option value='8'>Insignia</option><option value='19'>Kadett</option><option value='30'>Kapitan</option><option value='31'>Karl</option><option value='23'>Manta</option><option value='9'>Meriva</option><option value='32'>Mokka</option><option value='33'>Monza</option><option value='10'>Movano</option><option value='18'>Omega</option><option value='20'>Rekord</option><option value='34'>Senator</option><option value='11'>Signum</option><option value='22'>Sintra</option><option value='12'>Speedster</option><option value='13'>Tigra</option><option value='14'>Vectra</option><option value='15'>Vivaro</option><option value='16'>Zafira</option><option value='35'>Zafira Tourer</option><option value='0'>Muut</option>"
@@ -857,7 +951,7 @@
     var dkw = "<option value=''>Malli</option>"
     var dodge = "<option value=''>Malli</option><option value='1'>Avenger</option><option value='14'>B250</option><option value='15'>B350</option><option value='2'>Caliber</option><option value='3'>Caravan</option><option value='4'>Challenger</option><option value='6'>Charger</option><option value='16'>Coronet</option><option value='7'>Durango</option><option value='5'>Grand Caravan</option><option value='17'>Intrepid</option><option value='8'>Journey</option><option value='18'>Luxury Line</option><option value='9'>Magnum</option><option value='10'>Nitro</option><option value='12'>Ram</option><option value='19'>Standard</option><option value='20'>Super Bee</option><option value='13'>Van</option><option value='11'>Viper</option><option value='0'>Muut</option>"
     var ds = "<option value=''>Malli</option><option value='1'>3</option><option value='2'>4</option><option value='3'>5</option><option value='4'>6</option><option value='5'>7</option><option value='0'>Muut</option>"
-    var ferarri = "<option value=''>Malli</option><option value='11'>250</option><option value='12'>308</option><option value='13'>328</option><option value='14'>330</option><option value='15'>348</option><option value='1'>355</option><option value='2'>360</option><option value='16'>400</option><option value='3'>430</option><option value='4'>456</option><option value='5'>458</option><option value='17'>488</option><option value='18'>512</option><option value='6'>550</option><option value='7'>575</option><option value='8'>599</option><option value='9'>612</option><option value='10'>California</option><option value='20'>Dino</option><option value='21'>Enzo</option><option value='27'>F12</option><option value='19'>F50</option><option value='26'>FF</option><option value='25'>GTC4 Lusso</option><option value='22'>Mondial</option><option value='24'>Portofino</option><option value='23'>Testarossa</option><option value='0'>Muut</option>"
+    var ferarri = "<option value=''>Malli</option><option value='11'>250</option><option value='12'>308</option><option value='13'>328</option><option value='14'>330</option><option value='15'>348</option><option value='1'>355</option><option value='2'>360</option><option value='16'>400</option><option value='3'>430</option><option value='4'>456</option><option value='5'>458</option><option value='17'>488</option><option value='18'>512</option><option value='6'>550</option><option value='7'>575</option><option value='8'>599</option><option value='9'>612</option><option value='10'>Calfornia</option><option value='20'>Dino</option><option value='21'>Enzo</option><option value='27'>F12</option><option value='19'>F50</option><option value='26'>FF</option><option value='25'>GTC4 Lusso</option><option value='22'>Mondial</option><option value='24'>Portofino</option><option value='23'>Testarossa</option><option value='0'>Muut</option>"
     var fiat = "<option value=''>Malli</option><option value='19'>124</option><option value='34'>124 Spider</option><option value='37'>125</option><option value='38'>126</option><option value='39'>127</option><option value='40'>128</option><option value='20'>130</option><option value='41'>133</option><option value='42'>238</option><option value='1'>500</option><option value='32'>500C</option><option value='43'>500L</option><option value='33'>500X</option><option value='21'>600</option><option value='44'>850</option><option value='22'>1100</option><option value='29'>Albea</option><option value='2'>Barchetta</option><option value='17'>Brava</option><option value='3'>Bravo</option><option value='23'>Coupé</option><option value='4'>Croma</option><option value='5'>Doblo</option><option value='14'>Ducato</option><option value='6'>Fiorino</option><option value='30'>Freemont</option><option value='35'>Fullback</option><option value='7'>Grande Punto</option><option value='28'>Idea</option><option value='31'>Linea</option><option value='18'>Marea</option><option value='24'>Multipla</option><option value='25'>Palio</option><option value='8'>Panda</option><option value='9'>Punto</option><option value='45'>Punto Evo</option><option value='46'>Qubo</option><option value='47'>Ritmo</option><option value='13'>Scudo</option><option value='26'>Seicento</option><option value='10'>Stilo</option><option value='11'>Strada</option><option value='48'>Talento</option><option value='15'>Tempra</option><option value='36'>Tipo</option><option value='12'>Ulysse</option><option value='16'>Uno</option><option value='27'>X 1/9</option><option value='0'>Muut</option>"
     var gaz = "<option value=''>Malli</option><option value='1'>51</option><option value='2'>Jeep</option><option value='3'>Popeda</option>"
     var gmc = "<option value=''>Malli</option><option value='1'>Pickup</option><option value='2'>Safari</option><option value='3'>Savana</option><option value='4'>Sierra</option><option value='5'>Suburban</option><option value='6'>Vandura</option>"
@@ -879,7 +973,7 @@
     var lincoln = "<option value=''>Malli</option><option value='1'>2D HT</option><option value='2'>Continental</option><option value='3'>Mark</option><option value='8'>MKC</option><option value='9'>MKT</option><option value='10'>MKX</option><option value='11'>MKZ</option><option value='4'>Navigator</option><option value='5'>Premiere</option><option value='6'>Town Car</option><option value='7'>Zephyr</option><option value='0'>Muut</option>"
     var lotus = "<option value=''>Malli</option><option value='1'>Elise</option><option value='2'>Elise Sport</option><option value='3'>Elise Sport 220</option><option value='4'>Evora</option><option value='5'>Evora 400</option><option value='6'>Excel</option><option value='7'>Exige Sport 350</option><option value='8'>Exige S Roadster</option><option value='9'>Seven</option><option value='0'>Muut</option>"
     var mesarati = "<option value=''>Malli</option><option value='1'>3200</option><option value='2'>4200</option><option value='3'>Biturbo</option><option value='4'>Coupe</option><option value='5'>GranCabrio</option><option value='6'>GranSport</option><option value='7'>GranTurismo</option><option value='8'>Ghibli</option><option value='9'>Levante</option><option value='10'>Quattroporte</option><option value='11'>Spyder</option><option value='0'>Muut</option>"
-    var mazda = "<option value=''>Malli</option><option value='18'>121</option><option value='19'>1500</option><option value='20'>1800</option><option value='1'>2</option><option value='21'>2200</option><option value='2'>3</option><option value='12'>323</option><option value='23'>323F</option><option value='3'>5</option><option value='4'>6</option><option value='13'>626</option><option value='24'>818</option><option value='25'>929</option><option value='26'>B2500</option><option value='27'>B2600</option><option value='28'>BT-50</option><option value='29'>CX-3</option><option value='41'>CX-30</option><option value='30'>CX-5</option><option value='6'>CX-7</option><option value='31'>CX-9</option><option value='7'>Demio</option><option value='32'>Europe</option><option value='33'>Familia</option><option value='34'>Forte</option><option value='35'>Marella</option><option value='36'>MPV</option><option value='16'>MX-3</option><option value='8'>MX-5</option><option value='17'>MX-6</option><option value='37'>Neo</option><option value='38'>Pickup</option><option value='14'>Premacy</option><option value='15'>RX-7</option><option value='10'>RX-8</option><option value='11'>Tribute</option><option value='39'>Xedos 6</option><option value='40'>Xedos 9</option><option value='0'>Muut</option>"
+    var mazda = "<option value=''>Malli</option><option value='18'>121</option><option value='19'>1500</option><option value='20'>1800</option><option value='1'>2</option><option value='21'>2200</option><option value='2'>3</option><option value='12'>323</option><option value='23'>323F</option><option value='3'>5</option><option value='4'>6</option><option value='13'>626</option><option value='24'>818</option><option value='25'>929</option><option value='26'>B2500</option><option value='27'>B2600</option><option value='28'>BT-50</option><option value='29'>CX-3</option><option value='41'>CX-30</option><option value='30'>CX-5</option><option value='6'>CX-7</option><option value='31'>CX-9</option><option value='7'>Demio</option><option value='32'>Europe</option><option value='33'>Familia</option><option value='34'Forte</option><option value='35'>Marella</option><option value='36'>MPV</option><option value='16'>MX-3</option><option value='8'>MX-5</option><option value='17'>MX-6</option><option value='37'>Neo</option><option value='38'>Pickup</option><option value='14'>Premacy</option><option value='15'>RX-7</option><option value='10'>RX-8</option><option value='11'>Tribute</option><option value='39'>Xedos 6</option><option value='40'>Xedos 9</option><option value='0'>Muut</option>"
     var mcLaren = "<option value=''>Malli</option><option value='1'>570S</option><option value='2'>MP4-12C</option><option value='0'>Muut</option> value='0'>Muut</option>"
     var mini = "<option value=''>Malli</option><option value='1'>Cooper</option><option value='2'>Cooper S</option><option value='9'>Cabrio</option><option value='4'>Clubman</option><option value='6'>Countryman</option><option value='5'>John Cooper Works</option><option value='7'>Mini</option><option value='3'>One</option><option value='8'>Paceman</option><option value='0'>Muut</option>"
     var mitsubushi = "<option value=''>Malli</option><option value='11'>3000 GT</option><option value='13'>ASX</option><option value='10'>Carisma</option><option value='1'>Colt</option><option value='12'>Eclipse</option><option value='7'>EVO-mallit</option><option value='2'>Galant</option><option value='3'>Grandis</option><option value='8'>L200</option><option value='4'>Lancer</option><option value='5'>Outlander</option><option value='6'>Pajero</option><option value='15'>Shogun Sport</option><option value='14'>Sigma</option><option value='9'>Space-sarja</option><option value='0'>Muut</option>"
@@ -894,9 +988,9 @@
     var rollsRoyce = "<option value=''>Malli</option><option value='1'>Cullinan</option><option value='2'>Dawn</option><option value='3'>Ghost</option><option value='4'>Wraith</option><option value='5'>Phantom VII</option><option value='6'>Phantom VIII</option><option value='7'>Wraith</option><option value='0'>Muut</option>"
     var rover = "<option value=''>Malli</option><option value='1'>200</option><option value='2'>2000</option><option value='3'>25</option><option value='4'>3500</option><option value='5'>400</option><option value='6'>600</option><option value='7'>75</option><option value='8'>820</option><option value='0'>Muut</option>"
     var seat = "<option value=''>Malli</option><option value='1'>Alhambra</option><option value='2'>Altea</option><option value='10'>Altea Freetrack</option><option value='3'>Altea XL</option><option value='16'>Arona</option><option value='11'>Arosa</option><option value='12'>Ateca</option><option value='4'>Cordoba</option><option value='5'>Ibiza</option><option value='6'>Inca</option><option value='7'>Leon</option><option value='13'>Leon X-Perience</option><option value='14'>Mii</option><option value='8'>Toledo</option><option value='9'>Exeo</option><option value='15'>Exeo ST</option><option value='17'>Tarraco</option><option value='0'>Muut</option>"
-    var smart = "<option value=''>Malli</option><option value='1'>Crossblade</option><option value='2'>Forfour</option><option value='3'>Fortwo</option><option value='4'>Roadster</option><option value='0'>Muut</option>"
+    var smart = "<option value=''>Malli</option><option value='1'>Crossblade</option><option value='2'Forfour</option><option value='3'Fortwo</option><option value='4'>Roadster</option><option value='0'>Muut</option>"
     var ssangyong = "<option value=''>Malli</option><option value='1'>Actyon</option><option value='6'>Korando</option><option value='2'>Kyron</option><option value='3'>Musso</option><option value='4'>Rexton</option><option value='5'>Rodius</option><option value='7'>Tivoli</option><option value='0'>Muut</option>"
-    var subaru = "<option value=''>Malli</option><option value='12'>Ascent</option><option value='6'>BRZ</option><option value='1'>Forester</option><option value='2'>Impreza</option><option value='3'>Justy</option><option value='4'>Legacy</option><option value='11'>Leone</option><option value='7'>Levorg</option><option value='8'>Outback</option><option value='5'>Tribeca</option><option value='9'>SVX</option><option value='10'>XV</option><option value='0'>Muut</option>"
+    var subaru = "<option value=''>Malli</option><option value='12'>Ascent</option><option value='6'>BRZ</option><option value='1'Forester</option><option value='2'>Impreza</option><option value='3'>Justy</option><option value='4'>Legacy</option><option value='11'>Leone</option><option value='7'>Levorg</option><option value='8'>Outback</option><option value='5'>Tribeca</option><option value='9'>SVX</option><option value='10'>XV</option><option value='0'>Muut</option>"
     var suzuki = "<option value=''>Malli</option><option value='1'>Alto</option><option value='12'>Carry</option><option value='11'>Ignis</option><option value='2'>Jimny</option><option value='13'>S-cross</option><option value='14'>SA310</option><option value='15'>Samurai</option><option value='16'>SJ410</option><option value='17'>SJ413</option><option value='4'>Splash</option><option value='3'>Swift</option><option value='5'>SX4</option><option value='6'>Vitara</option><option value='7'>Grand Vitara</option><option value='8'>Baleno</option><option value='9'>Liana</option><option value='10'>Wagon R+</option><option value='0'>Muut</option>"
     var talbot = "<option value=''>Malli</option><option value='1'>1510</option><option value='2'>Horizon</option><option value='3'>Solara</option>"
     var tesla = "<option value=''>Malli</option><option value='1'>Model S</option><option value='2'>Model X</option><option value='3'>Model 3</option><option value='0'>Muut</option>"
@@ -914,146 +1008,355 @@
     function mySelectedVal(){
         console.log(selectedVal)
         if (selectedVal.value == 'Audi'){
-        console.log(selectedMod)
           selectedMod.innerHTML = audi
-        }else if(selectedVal.value == 'Ford'){
-          selectedMod.innerHTML = ford
+         for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
+        }else if(selectedVal.value == Ford'){
+          selectedMod.innerHTML =ford
+                   for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'BMW'){
           selectedMod.innerHTML = bmw
+                   for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Mercedes-Benz'){
           selectedMod.innerHTML = mercedesBenz
+                   for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Nissan'){
           selectedMod.innerHTML = nissan
+                   for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Opel'){
           selectedMod.innerHTML = opel
+           for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Skoda'){
           selectedMod.innerHTML = skoda
+           for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Toyota'){
            selectedMod.innerHTML = toyota
+           for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Volkswagen'){
           selectedMod.innerHTML = volkswagen
+                   for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Volvo'){
           selectedMod.innerHTML = volvo
+                   for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Alfa Romeo'){
           selectedMod.innerHTML = alfaRomeo
+                   for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Aston Martin'){
           selectedMod.innerHTML = astonMartin
+                   for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Austin'){
           selectedMod.innerHTML = austin
+                   for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Bentley'){
             selectedMod.innerHTML = bentley
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Buick'){
             selectedMod.innerHTML = buick
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Cadillac'){
             selectedMod.innerHTML = cadillac
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Chevrolet'){
             selectedMod.innerHTML = chevrolet
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Chrysler'){
             selectedMod.innerHTML = chrysler
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Citroen'){
             selectedMod.innerHTML = citreon
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Dacia'){
             selectedMod.innerHTML = dacia
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Daewoo'){
             selectedMod.innerHTML = daewoo
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Daihatsu'){
             selectedMod.innerHTML = daihatsu
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'DKW'){
             selectedMod.innerHTML = dkw
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Dodge'){
             selectedMod.innerHTML = dodge
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'DS'){
             selectedMod.innerHTML = ds
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Ferrari'){
             selectedMod.innerHTML = ferrari
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Fiat'){
             selectedMod.innerHTML = fiat
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'GAZ'){
             selectedMod.innerHTML = gaz
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'GMC'){
             selectedMod.innerHTML = gmc
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Honda'){
             selectedMod.innerHTML = honda
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Hudson'){
             selectedMod.innerHTML = hudson
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Hummer'){
             selectedMod.innerHTML = hummer
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Hyundai'){
             selectedMod.innerHTML = hyundai
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Infiniti'){
             selectedMod.innerHTML = infiniti
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Isuzu'){
             selectedMod.innerHTML = isuzu
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Iveco'){
             selectedMod.innerHTML = iveco
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Jaguar'){
             selectedMod.innerHTML = jaguar
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Jeep'){
             selectedMod.innerHTML = jeep
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'KIA'){
             selectedMod.innerHTML = kia
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Lada'){
             selectedMod.innerHTML = lada
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Lamborghini'){
             selectedMod.innerHTML = lamborghini
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Lancia'){
             selectedMod.innerHTML = lancia
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Land Rover'){
             selectedMod.innerHTML = landRover
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Lexus'){
             selectedMod.innerHTML = lexus
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Lincoln'){
             selectedMod.innerHTML = lincoln
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Lotus'){
             selectedMod.innerHTML = lotus
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Masereti'){
             selectedMod.innerHTML = mesarati
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Oldsmobile'){
             selectedMod.innerHTML = oldMobile
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Peugeot'){
             selectedMod.innerHTML = peugeot
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Pontiac'){
             selectedMod.innerHTML = pontaic
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Porsche'){
             selectedMod.innerHTML = porshe
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Renault'){
             selectedMod.innerHTML = renault
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Rolls-Royce'){
             selectedMod.innerHTML = rollsRoyce
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Rover'){
             selectedMod.innerHTML = rover
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Saab'){
             selectedMod.innerHTML = saab
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Seat'){
             selectedMod.innerHTML = seat
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Smart'){
             selectedMod.innerHTML = smart
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'SsangYang'){
             selectedMod.innerHTML = ssangyong
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Subaru'){
             selectedMod.innerHTML = saburu
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Talbot'){
             selectedMod.innerHTML = talbot
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Tesla'){
             selectedMod.innerHTML = tesla
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'TruckMasters'){
             selectedMod.innerHTML = truckmasters
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Vauxhall'){
             selectedMod.innerHTML = vauxhall
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Trabant'){
             selectedMod.innerHTML = trabant
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Mitsubishi'){
             selectedMod.innerHTML = mitsubishi
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Mini'){
             selectedMod.innerHTML = mini
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'McLaren'){
             selectedMod.innerHTML = mcLaren
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Mazda'){
             selectedMod.innerHTML = mazda
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Morris'){
             selectedMod.innerHTML = morris
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else if(selectedVal.value == 'Moskvitsh'){
             selectedMod.innerHTML = moskvitsh
+                     for(i=0; i<options.length;i++){
+            options[i].style.color = "black"
+            }
         }else{
            selectedMod.innerHTML = trabant
         }

@@ -94,7 +94,18 @@ def crawl(href):
                         return context
 
 
-def get_all_website_links(href, mileagerange, pricerange, searchlist):
+car_list = []
+with open('/home/propertywithin/Desktop/computation/car_list.txt', 'r') as f:
+    for w in f:
+        car_list.append(w.lower().strip())
+
+pages_list = []
+with open('/home/propertywithin/Desktop/computation/pages.txt', 'r') as f:
+    for w in f:
+        pages_list.append('http://' + 'tori.fi/' + w.lower().strip())
+
+
+def get_all_website_links(href, mileagerange, pricerange, searchlist, yearmodel):
     for i in range(len(searchlist)):
         if searchlist[i] == 'None':
             searchlist[i] = None
@@ -140,19 +151,67 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist):
                         context = {}
                         href_item = a.attrs.get("href")
                         if search == 1:
+                            dic_of_carfeatures = {}
                             r = requests.get(href_item)
                             soup = BeautifulSoup(r.content, "html.parser")
+                            linked = soup.find_all('div', class_='moottori_fi')
+                            if len(linked) == 2:
+                                cars = linked[0]
+                                car = cars.find_all('a')
+                                if len(car) == 2:
+                                    speccar = car[1].text.split()
+                                    cartype = speccar[1]
+                                    carmodel = speccar[2]
+                                    dic_of_carfeatures['cartype'] = cartype
+                                    dic_of_carfeatures['carmodel'] = carmodel
+                            else:
+                                dic_of_carfeatures = {}
                             price = soup.find("span", {"itemprop": "price"})['content']
                             if len(price) != 0:
                                 price = int(price)
                             else:
                                 price = 0
                             table = soup.findAll("table", class_="tech_data")
+                            if len(table) == 4:
+                                topics = table[1].findAll("td", class_="topic")
+                                values = table[1].findAll("td", class_="value")
+                                for i in range(len(topics)):
+                                    keyv = topics[i].text.strip().split(':')[0]
+                                    vv = values[i].text
+                                    dic_of_carfeatures[keyv] = vv
+                                if dic_of_carfeatures['Ilmastointi'] == '✓':
+                                    dic_of_carfeatures['Ilmastointi'] = 'Air conditioning'
+                                if dic_of_carfeatures['Huoltokirja'] == '✓':
+                                    dic_of_carfeatures['Huoltokirja'] = 'Service book'
+                                if dic_of_carfeatures['Vakionopeudensäädin'] == '✓':
+                                    dic_of_carfeatures['Vakionopeudensäädin'] = 'Cruise control'
+                                if dic_of_carfeatures['Isofix-valmius'] == '✓':
+                                    dic_of_carfeatures['Isofix-valmius'] = 'Isofix readiness'
+                                if dic_of_carfeatures['Nahkasisustus'] == '✓':
+                                    dic_of_carfeatures['Nahkasisustus'] = 'Leather upholstery'
+                                if dic_of_carfeatures['Lohkolämmitin'] == '✓':
+                                    dic_of_carfeatures['Lohkolämmitin'] = 'Motor heater'
+                                if dic_of_carfeatures['Sisätilapistoke'] == '✓':
+                                    dic_of_carfeatures['Sisätilapistoke'] = 'Internal plug'
+                                if dic_of_carfeatures['Kahdet renkaat'] == '✓':
+                                    dic_of_carfeatures['Kahdet renkaat'] = 'Two tires'
+                                if dic_of_carfeatures['Vetokoukku'] == '✓':
+                                    dic_of_carfeatures['Vetokoukku'] = 'Towbar'
+                                if dic_of_carfeatures['Metalliväri'] == '✓':
+                                    dic_of_carfeatures['Metalliväri'] = 'Metallic color'
+                                if dic_of_carfeatures['Pysäköintitutka'] == '✓':
+                                    dic_of_carfeatures['Pysäköintitutka'] = 'Parking sensors'
+                                if dic_of_carfeatures['Xenon-ajovalot'] == '✓':
+                                    dic_of_carfeatures['Xenon-ajovalot'] = 'Xenon headlights'
+                                if dic_of_carfeatures['LED-ajovalot'] == '✓':
+                                    dic_of_carfeatures['LED-ajovalot'] = 'LED headlights'
+                                if dic_of_carfeatures['Webasto/Eber'] == '✓':
+                                    dic_of_carfeatures['Webasto/Eber'] = 'Webasto/Eber'
+                            else:
+                                dic_of_carfeatures = {}
                             if len(table) != 0:
                                 topics = table[0].findAll("td", class_="topic")
                                 values = table[0].findAll("td", class_="value")
-
-                                dic_of_carfeatures = {}
                                 for i in range(len(topics)):
                                     keyv = topics[i].text.strip().lower().split(':')[0]
                                     vv = values[i].text.strip().lower()
@@ -162,16 +221,32 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist):
                                     if dic_of_carfeatures.get('mittarilukema') != None and dic_of_carfeatures.get(
                                             'mittarilukema') != "":
                                         dic_of_carfeatures['mittarilukema'] = int(dic_of_carfeatures['mittarilukema'])
-                                print(dic_of_carfeatures)
                                 searchlistlen = len(searchlist)
-                                print(searchlist)
                                 foundlist = [item for item in searchlist if item in dic_of_carfeatures.values()]
                                 foundlen = len(foundlist)
-                                print(foundlen)
-                                print(searchlistlen)
                                 if searchlistlen - foundlen >= 1:
-                                    print(searchlist)
-                                    print(foundlist)
+                                    if dic_of_carfeatures['vuosimalli'] != '-':
+                                        year = dic_of_carfeatures['vuosimalli']
+                                        year = int(year)
+                                        if year_model[0] != 'None' and year_model[1] != 'None':
+                                            minn = year_model[0]
+                                            maxx = year_model[1]
+                                            minn = int(minn)
+                                            maxx = int(maxx)
+                                            if year >= minn and year <= maxx:
+                                                context['href_item'] = href_item
+                                        elif year_model[0] != 'None':
+                                            minn = year_model[0]
+                                            minn = int(minn)
+                                            if year >= minn:
+                                                context['href_item'] = href_item
+                                        elif year_model[1] != 'None':
+                                            maxx = year_model[1]
+                                            maxx = int(maxx)
+                                            if year <= maxx:
+                                                context['href_item'] = href_item
+                                        else:
+                                            context['href_item'] = href_item
                                     if pricerange[0] != 'None' and pricerange[1] != 'None':
                                         minn = pricerange[0]
                                         maxx = pricerange[1]
@@ -179,19 +254,16 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist):
                                         maxx = int(maxx)
                                         if price >= minn and price <= maxx:
                                             context['href_item'] = href_item
-                                            print(context)
                                     elif pricerange[0] != 'None':
                                         minn = pricerange[0]
                                         minn = int(minn)
                                         if price >= minn:
                                             context['href_item'] = href_item
-                                            print(context)
                                     elif pricerange[1] != 'None':
                                         maxx = pricerange[1]
                                         maxx = int(maxx)
                                         if price <= maxx:
                                             context['href_item'] = href_item
-                                            print(context)
                                     else:
                                         context['href_item'] = href_item
                                     mileagemin = mileagerange[0]
@@ -246,6 +318,7 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist):
                                     context['img_url'] = res_collector[0]
                                     res_collector = []
                                     return context
+    # koeajoista
 
 
 @shared_task
@@ -273,7 +346,7 @@ def searched_value_email_sender():
     pricerange = searching_values.pricerange
     searchlist = searching_values.searchlist
     for href in pages_list:
-        context = (get_all_website_links(href, mileagerange, pricerange, searchlist))
+        context = (get_all_website_links(href, mileagerange, pricerange, searchlist, yearmodel))
         print(context)
         if context is not None:
             print(context['feature1'])
@@ -282,7 +355,9 @@ def searched_value_email_sender():
             print(context['img_url'])
             send_mail("Advanced Search Car Update",
                       f"{context['feature1']} {context['feature2']} {context['href_item']} {context['img_url']}",
-                      'caragent682@gmail.com', ['ikechukwuka4paypal@gmail.com', 'Milliborn@yahoo.com', 'Clintonbychris@yahoo.com' ,'godspowereze260@gmail.com'])
+                      'caragent682@gmail.com',
+                      ['ikechukwuka4paypal@gmail.com', 'Milliborn@yahoo.com', 'Clintonbychris@yahoo.com',
+                       'godspowereze260@gmail.com'])
 
 
 @shared_task

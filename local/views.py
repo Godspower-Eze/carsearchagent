@@ -36,9 +36,11 @@ def search(request):
         year_model_min = request.POST.get('year-model-min')
         if year_model_min == 'YEAR MODEL(MIN)':
             year_model_min = None
+        print(year_model_min)
         year_model_max = request.POST.get('year-model-max')
         if year_model_max == 'YEAR MODEL(MAX)':
             year_model_max = None
+        print(year_model_max)
         min_mileage = request.POST.get('min-mileage')
         if min_mileage == 'MIN MILEAGE':
             min_mileage = None
@@ -53,8 +55,9 @@ def search(request):
         if car == 'MAKE (Merkki)':
             car = None
         print(car)
-        carmodel = request.POST.get('car_model')
-        if carmodel == 'Malli':
+        carmodel = request.POST.get('car-model-type')
+        print(carmodel)
+        if carmodel == 'CAR MODEL':
             carmodel = None
         print(carmodel)
         airconditioner = request.POST.get('air-conditioning')
@@ -80,6 +83,7 @@ def search(request):
         searched_value_sender.delay(mileagerange, pricerange, searchlist)
         searched = SearchedValue(searchlist=searchlist, mileagerange=mileagerange, pricerange=pricerange,
                                  yearmodel=year_model)
+        print(searched)
         searched.save()
         searching_values = SearchedValue.objects.last()
         mileagerange = searching_values.mileagerange

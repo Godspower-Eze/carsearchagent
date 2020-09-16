@@ -345,6 +345,7 @@ def searched_value_email_sender():
     mileagerange = searching_values.mileagerange
     pricerange = searching_values.pricerange
     searchlist = searching_values.searchlist
+    yearmodel = searching_values.yearmodel
     for href in pages_list:
         context = (get_all_website_links(href, mileagerange, pricerange, searchlist, yearmodel))
         print(context)

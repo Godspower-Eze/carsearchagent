@@ -76,19 +76,16 @@ def search(request):
         metalliccolor = request.POST.get('metallic-color')
         year_model = [year_model_min, year_model_max]
         searchlist = [vehicle_type, gearing, car, carmodel, fuel, airconditioner, servicebook, cruisecontrol,
-                      isofixreadiness, leatherupholstery, internalplug, twotires, parkingsensors,
+                      isofixreadiness, leatherupholstery, motorheater, internalplug, twotires, parkingsensors,
                       xenonheadlights, ledheadlights, webastoeber, towbar, metalliccolor]
         mileagerange = [min_mileage, max_mileage]
         pricerange = [min_price, max_price]
-        searched_value_sender.delay(mileagerange, pricerange, searchlist,year_model)
+        searched_value_sender.delay(mileagerange, pricerange, searchlist, year_model)
         searched = SearchedValue(searchlist=searchlist, mileagerange=mileagerange, pricerange=pricerange,
                                  yearmodel=year_model)
         print(searched)
         searched.save()
         searching_values = SearchedValue.objects.last()
-        mileagerange = searching_values.mileagerange
-        pricerange = searching_values.pricerange
-        searchlist = searching_values.searchlist
         deletedvalue = SearchedValue.objects.get(id=searching_values.id - 1)
         deletedvalue.delete()
     return render(request, 'local/search.html')

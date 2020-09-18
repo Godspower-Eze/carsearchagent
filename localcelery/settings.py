@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'ch5v^tgzimhb9ktr&fz=ruv3es#4ni9w!q5%dn3#1wi8eq$-a='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['209.97.141.28', '127.0.0.1', 'localhost']
 
@@ -81,22 +81,22 @@ TEMPLATES = [
 
 ASGI_APPLICATION = 'localcelery.routing.application'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'caragent',
-        'USER': 'godspower',
-        'PASSWORD': 'Eminentfablous50',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'caragent',
+#         'USER': 'godspower',
+#         'PASSWORD': 'Eminentfablous50',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -141,7 +141,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # Use CELERY_ prefix
 
 # CELERY_ENABLE_UTC = True
-CELERY_TIMEZONE = 'Europe/Finland'
+CELERY_TIMEZONE = 'Europe/Helsinki'
 
 CELERY_ACCEPT_CONTENT = ['application/json']
 
@@ -154,8 +154,8 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'caragent682@gmail.com'
-EMAIL_HOST_PASSWORD = 'caragent265'
+EMAIL_HOST = 'smtp.mail.yahoo.com'
+EMAIL_PORT = '465'
+EMAIL_HOST_USER = 'agentcar@yahoo.com'
+EMAIL_HOST_PASSWORD = 'Searching45'
 EMAIL_USE_TLS = True

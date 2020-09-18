@@ -80,7 +80,7 @@ def search(request):
                       xenonheadlights, ledheadlights, webastoeber, towbar, metalliccolor]
         mileagerange = [min_mileage, max_mileage]
         pricerange = [min_price, max_price]
-        searched_value_sender.delay(mileagerange, pricerange, searchlist)
+        searched_value_sender.delay(mileagerange, pricerange, searchlist,year_model)
         searched = SearchedValue(searchlist=searchlist, mileagerange=mileagerange, pricerange=pricerange,
                                  yearmodel=year_model)
         print(searched)

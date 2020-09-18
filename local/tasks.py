@@ -105,7 +105,7 @@ with open('/home/propertywithin/Desktop/computation/pages.txt', 'r') as f:
         pages_list.append('http://' + 'tori.fi/' + w.lower().strip())
 
 
-def get_all_website_links(href, mileagerange, pricerange, searchlist, yearmodel):
+def get_all_website_links(href, mileagerange, pricerange, searchlist, year_model):
     for i in range(len(searchlist)):
         if searchlist[i] == 'None':
             searchlist[i] = None
@@ -225,7 +225,8 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist, yearmodel)
                                 foundlist = [item for item in searchlist if item in dic_of_carfeatures.values()]
                                 foundlen = len(foundlist)
                                 if searchlistlen - foundlen >= 1:
-                                    if dic_of_carfeatures['vuosimalli'] != '-':
+                                    if dic_of_carfeatures.get('vuosimalli') != None and dic_of_carfeatures.get(
+                                            'vuosimalli') != '-':
                                         year = dic_of_carfeatures['vuosimalli']
                                         year = int(year)
                                         if year_model[0] != 'None' and year_model[1] != 'None':
@@ -323,18 +324,18 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist, yearmodel)
 
 @shared_task
 def data_sender():
-    ws.connect("ws://127.0.0.1:8000/ws/home/")
+    ws.connect("ws://127.0.0.1:8010/ws/home/")
     for href in pages_list:
         context = (crawl(href))
         ws.send(json.dumps({'value': context}))
 
 
 @shared_task
-def searched_value_sender(mileagerange, pricerange, searchlist):
-    ws.connect("ws://127.0.0.1:8000/ws/search/")
+def searched_value_sender(mileagerange, pricerange, searchlist, year_model):
+    ws.connect("ws://127.0.0.1:8009/ws/search/")
     for href in pages_list:
         print('Working')
-        context = (get_all_website_links(href, mileagerange, pricerange, searchlist))
+        context = (get_all_website_links(href, mileagerange, pricerange, searchlist, year_model))
         print(context)
         ws.send(json.dumps({'value': context}))
 

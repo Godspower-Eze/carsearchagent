@@ -81,22 +81,22 @@ TEMPLATES = [
 
 ASGI_APPLICATION = 'localcelery.routing.application'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'caragent',
-        'USER': 'godspower',
-        'PASSWORD': 'Eminentfablous50',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'caragent',
+#         'USER': 'godspower',
+#         'PASSWORD': 'Eminentfablous50',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -141,7 +141,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # Use CELERY_ prefix
 
 # CELERY_ENABLE_UTC = True
-CELERY_TIMEZONE = 'Europe/Helsinki'
+# CELERY_TIMEZONE = 'Africa/Lagos'
 
 CELERY_ACCEPT_CONTENT = ['application/json']
 
@@ -154,8 +154,9 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 
-EMAIL_HOST = 'smtp.mail.yahoo.com'
-EMAIL_PORT = '465'
-EMAIL_HOST_USER = 'agentcar@yahoo.com'
-EMAIL_HOST_PASSWORD = 'Searching45'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'agentcar49@gmail.com'
+EMAIL_HOST_PASSWORD = 'Caragent45!!'
 EMAIL_USE_TLS = True

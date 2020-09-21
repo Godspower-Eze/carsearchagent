@@ -14,6 +14,7 @@ def index(request):
 
 def search(request):
     if request.method == 'POST':
+        searchlistmain = []
         vehicle_type = request.POST.get('vehicle-type')
         if vehicle_type == 'VEHICLE TYPE':
             vehicle_type = None
@@ -34,6 +35,7 @@ def search(request):
         else:
             max_price = int(max_price)
         year_model_min = request.POST.get('year-model-min')
+        print(year_model_min)
         if year_model_min == 'YEAR MODEL(MIN)':
             year_model_min = None
         print(year_model_min)
@@ -56,7 +58,7 @@ def search(request):
             car = None
         print(car)
         carmodel = request.POST.get('car-model-type')
-        print(carmodel)
+        # print(carmodel)
         if carmodel == 'CAR MODEL':
             carmodel = None
         print(carmodel)
@@ -78,12 +80,16 @@ def search(request):
         searchlist = [vehicle_type, gearing, car, carmodel, fuel, airconditioner, servicebook, cruisecontrol,
                       isofixreadiness, leatherupholstery, motorheater, internalplug, twotires, parkingsensors,
                       xenonheadlights, ledheadlights, webastoeber, towbar, metalliccolor]
+        print(len(searchlist))
+        for i in searchlist:
+            if i != None:
+                searchlistmain.append(i)
+        print(searchlistmain)
         mileagerange = [min_mileage, max_mileage]
         pricerange = [min_price, max_price]
         searched_value_sender.delay(mileagerange, pricerange, searchlist, year_model)
-        searched = SearchedValue(searchlist=searchlist, mileagerange=mileagerange, pricerange=pricerange,
+        searched = SearchedValue(searchlist=searchlistmain, mileagerange=mileagerange, pricerange=pricerange,
                                  yearmodel=year_model)
-        print(searched)
         searched.save()
         searching_values = SearchedValue.objects.last()
         deletedvalue = SearchedValue.objects.get(id=searching_values.id - 1)

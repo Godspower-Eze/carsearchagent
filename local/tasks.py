@@ -120,10 +120,10 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist, year_model
 
                 div = a.findAll("div", class_="date_image")
                 now = datetime.datetime.now()
-                print(now, 'first')
+                # print(now, 'first')
                 nowhr, nowmin = now.hour + 3, now.minute
-                print(nowhr, 'seconde')
-                print(nowmin, 'thirde')
+                # print(nowhr, 'seconde')
+                # print(nowmin, 'thirde')
                 # nowhr2, nowmin2 = now.hour, now.minute
 
                 # nowmin_ls = list(range(nowmin + 1))
@@ -226,7 +226,7 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist, year_model
                                 searchlistlen = len(searchlist)
                                 foundlist = [item for item in searchlist if item in dic_of_carfeatures.values()]
                                 foundlen = len(foundlist)
-                                if searchlistlen - foundlen >= 1:
+                                if searchlistlen == foundlen:
                                     if dic_of_carfeatures.get('vuosimalli') != None and dic_of_carfeatures.get(
                                             'vuosimalli') != '-':
                                         year = dic_of_carfeatures['vuosimalli']

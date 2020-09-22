@@ -149,7 +149,8 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist, year_model
                     timehr, timemin = time.split(":")
                     timehr = int(timehr)
                     timemin = int(timemin)
-                    if timehr == nowhr and (timemin >= nowmin and nowmin < timemin + 5):  # or (timehr == nowhr2 and timemin in nowmins2):
+                    if timehr == nowhr and (
+                            timemin >= nowmin and nowmin < timemin + 5):  # or (timehr == nowhr2 and timemin in nowmins2):
                         context = {}
                         href_item = a.attrs.get("href")
                         if search == 1:
@@ -224,103 +225,109 @@ def get_all_website_links(href, mileagerange, pricerange, searchlist, year_model
                                             'mittarilukema') != "":
                                         dic_of_carfeatures['mittarilukema'] = int(dic_of_carfeatures['mittarilukema'])
                                 searchlistlen = len(searchlist)
-                                foundlist = [item for item in searchlist if item in dic_of_carfeatures.values()]
-                                foundlen = len(foundlist)
-                                if searchlistlen == foundlen:
-                                    if dic_of_carfeatures.get('vuosimalli') != None and dic_of_carfeatures.get(
-                                            'vuosimalli') != '-':
-                                        year = dic_of_carfeatures['vuosimalli']
-                                        year = int(year)
-                                        if year_model[0] != 'None' and year_model[1] != 'None':
-                                            minn = year_model[0]
-                                            maxx = year_model[1]
+                                final_list = []
+                                for i in searchlist:
+                                    foundlist = [item for item in i if item in dic_of_carfeatures.values()]
+                                    foundlen = len(foundlist)
+                                    if searchlistlen == foundlen:
+                                        if dic_of_carfeatures.get('vuosimalli') != None and dic_of_carfeatures.get(
+                                                'vuosimalli') != '-':
+                                            year = dic_of_carfeatures['vuosimalli']
+                                            year = int(year)
+                                            if year_model[0] != 'None' and year_model[1] != 'None':
+                                                minn = year_model[0]
+                                                maxx = year_model[1]
+                                                minn = int(minn)
+                                                maxx = int(maxx)
+                                                if year >= minn and year <= maxx:
+                                                    context['href_item'] = href_item
+                                            elif year_model[0] != 'None':
+                                                minn = year_model[0]
+                                                minn = int(minn)
+                                                if year >= minn:
+                                                    context['href_item'] = href_item
+                                            elif year_model[1] != 'None':
+                                                maxx = year_model[1]
+                                                maxx = int(maxx)
+                                                if year <= maxx:
+                                                    context['href_item'] = href_item
+                                            else:
+                                                context['href_item'] = href_item
+                                        if pricerange[0] != 'None' and pricerange[1] != 'None':
+                                            minn = pricerange[0]
+                                            maxx = pricerange[1]
                                             minn = int(minn)
                                             maxx = int(maxx)
-                                            if year >= minn and year <= maxx:
+                                            if price >= minn and price <= maxx:
                                                 context['href_item'] = href_item
-                                        elif year_model[0] != 'None':
-                                            minn = year_model[0]
+                                        elif pricerange[0] != 'None':
+                                            minn = pricerange[0]
                                             minn = int(minn)
-                                            if year >= minn:
+                                            if price >= minn:
                                                 context['href_item'] = href_item
-                                        elif year_model[1] != 'None':
-                                            maxx = year_model[1]
+                                        elif pricerange[1] != 'None':
+                                            maxx = pricerange[1]
                                             maxx = int(maxx)
-                                            if year <= maxx:
+                                            if price <= maxx:
                                                 context['href_item'] = href_item
                                         else:
                                             context['href_item'] = href_item
-                                    if pricerange[0] != 'None' and pricerange[1] != 'None':
-                                        minn = pricerange[0]
-                                        maxx = pricerange[1]
-                                        minn = int(minn)
-                                        maxx = int(maxx)
-                                        if price >= minn and price <= maxx:
-                                            context['href_item'] = href_item
-                                    elif pricerange[0] != 'None':
-                                        minn = pricerange[0]
-                                        minn = int(minn)
-                                        if price >= minn:
-                                            context['href_item'] = href_item
-                                    elif pricerange[1] != 'None':
-                                        maxx = pricerange[1]
-                                        maxx = int(maxx)
-                                        if price <= maxx:
-                                            context['href_item'] = href_item
-                                    else:
+                                        mileagemin = mileagerange[0]
+                                        mileagemax = mileagerange[1]
+                                        if dic_of_carfeatures.get('mittarilukema') != None and dic_of_carfeatures.get(
+                                                'mittarilukema') != "":
+                                            if mileagerange[0] != 'None' and mileagerange[1] != 'None':
+                                                mileagemin = mileagerange[0]
+                                                mileagemax = mileagerange[1]
+                                                mileagemin = int(mileagemin)
+                                                mileagemax = int(mileagemax)
+                                                if dic_of_carfeatures['mittarilukema'] >= mileagemin and dic_of_carfeatures[
+                                                    'mittarilukema'] <= mileagemax:
+                                                    context['href_item'] = href_item
+                                            elif mileagerange[0] != 'None':
+                                                mileagemin = mileagerange[0]
+                                                mileagemin = int(mileagemin)
+                                                if dic_of_carfeatures['mittarilukema'] >= mileagemin:
+                                                    context['href_item'] = href_item
+                                            elif mileagerange[1] != 'None':
+                                                mileagemax = mileagerange[1]
+                                                mileagemax = int(mileagemax)
+                                                if dic_of_carfeatures['mittarilukema'] <= mileagemax:
+                                                    context['href_item'] = href_item
+                                            else:
+                                                context['href_item'] = href_item
+
+                                        car_features = soup.findAll("p", class_="param")
+                                        car_img = soup.findAll("img", class_="image_next")
+
+                                        res_collector = []
+                                        if len(car_img) != 0:
+                                            href_img = car_img[0].attrs.get("src")
+                                            res_collector.append(href_img)
+                                        else:
+                                            res_collector.append('no image')
+
+                                        href_item = a.attrs.get("href")
+                                        item_id = re.split('[_.]', href_item)[-2]
+
+                                        if len(car_div) != 0:
+                                            res_collector.append(car_div[0].text)
+                                        else:
+                                            res_collector.append('no feature1')
+                                        if len(car_features) != 0:
+                                            res_collector.append(car_features[0].text)
+                                        else:
+                                            res_collector.append('no feature2')
                                         context['href_item'] = href_item
-                                    mileagemin = mileagerange[0]
-                                    mileagemax = mileagerange[1]
-                                    if dic_of_carfeatures.get('mittarilukema') != None and dic_of_carfeatures.get(
-                                            'mittarilukema') != "":
-                                        if mileagerange[0] != 'None' and mileagerange[1] != 'None':
-                                            mileagemin = mileagerange[0]
-                                            mileagemax = mileagerange[1]
-                                            mileagemin = int(mileagemin)
-                                            mileagemax = int(mileagemax)
-                                            if dic_of_carfeatures['mittarilukema'] >= mileagemin and dic_of_carfeatures[
-                                                'mittarilukema'] <= mileagemax:
-                                                context['href_item'] = href_item
-                                        elif mileagerange[0] != 'None':
-                                            mileagemin = mileagerange[0]
-                                            mileagemin = int(mileagemin)
-                                            if dic_of_carfeatures['mittarilukema'] >= mileagemin:
-                                                context['href_item'] = href_item
-                                        elif mileagerange[1] != 'None':
-                                            mileagemax = mileagerange[1]
-                                            mileagemax = int(mileagemax)
-                                            if dic_of_carfeatures['mittarilukema'] <= mileagemax:
-                                                context['href_item'] = href_item
-                                        else:
-                                            context['href_item'] = href_item
-
-                                    car_features = soup.findAll("p", class_="param")
-                                    car_img = soup.findAll("img", class_="image_next")
-
-                                    res_collector = []
-                                    if len(car_img) != 0:
-                                        href_img = car_img[0].attrs.get("src")
-                                        res_collector.append(href_img)
-                                    else:
-                                        res_collector.append('no image')
-
-                                    href_item = a.attrs.get("href")
-                                    item_id = re.split('[_.]', href_item)[-2]
-
-                                    if len(car_div) != 0:
-                                        res_collector.append(car_div[0].text)
-                                    else:
-                                        res_collector.append('no feature1')
-                                    if len(car_features) != 0:
-                                        res_collector.append(car_features[0].text)
-                                    else:
-                                        res_collector.append('no feature2')
-                                    context['href_item'] = href_item
-                                    context['feature1'] = res_collector[1]
-                                    context['feature2'] = res_collector[2]
-                                    context['img_url'] = res_collector[0]
-                                    res_collector = []
-                                    return context
+                                        context['feature1'] = res_collector[1]
+                                        context['feature2'] = res_collector[2]
+                                        context['img_url'] = res_collector[0]
+                                        res_collector = []
+                                        final_list.append(context)
+                                if len(final_list) == 0:
+                                    return None
+                                else:
+                                    return final_list
     # koeajoista
 
 
@@ -344,24 +351,25 @@ def searched_value_sender(mileagerange, pricerange, searchlist, year_model):
 
 @shared_task
 def searched_value_email_sender():
-    searching_values = SearchedValue.objects.last()
-    mileagerange = searching_values.mileagerange
-    pricerange = searching_values.pricerange
-    searchlist = searching_values.searchlist
-    yearmodel = searching_values.yearmodel
-    for href in pages_list:
-        context = (get_all_website_links(href, mileagerange, pricerange, searchlist, yearmodel))
-        print(context)
-        if context is not None:
-            print(context['feature1'])
-            print(context['feature2'])
-            print(context['href_item'])
-            print(context['img_url'])
-            send_mail("Advanced Search Car Update",
-                      f"{context['feature1']} {context['feature2']} {context['href_item']} {context['img_url']}",
-                      'caragent682@gmail.com',
-                      ['ikechukwuka4paypal@gmail.com', 'Milliborn@yahoo.com', 'Clintonbychris@yahoo.com',
-                       'godspowereze260@gmail.com'])
+    searching_values = SearchedValue.objects.all()[:5]
+    print(type(searching_values))
+    for i in searching_values:
+        mileagerange = i.mileagerange
+        pricerange = i.pricerange
+        searchlist = i.searchlist
+        yearmodel = i.yearmodel
+        for href in pages_list:
+            context = (get_all_website_links(href, mileagerange, pricerange, searchlist, yearmodel))
+            print(context)
+            if context is not None:
+                print(context['feature1'])
+                print(context['feature2'])
+                print(context['href_item'])
+                print(context['img_url'])
+                send_mail(f"Advanced Search Car Update for {i}",
+                          f"{context['feature1']} {context['feature2']} {context['href_item']} {context['img_url']}",
+                          'caragent682@gmail.com',
+                          ['ikechukwuka4paypal@gmail.com', 'godspowereze260@gmail.com'])
 
 
 @shared_task
@@ -376,4 +384,4 @@ def email_sender():
             print(context['img_url'])
             send_mail("Unfiltered Car Update",
                       f"{context['feature1']} {context['feature2']} {context['href_item']} {context['img_url']}",
-                      'caragent682@gmail.com', ['ikechukwuka4paypal@gmail.com', 'Milliborn@yahoo.com'])
+                      'caragent682@gmail.com', ['ikechukwuka4paypal@gmail.com'])

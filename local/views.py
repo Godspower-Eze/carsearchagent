@@ -91,9 +91,9 @@ def search(request):
         searched = SearchedValue(searchlist=searchlistmain, mileagerange=mileagerange, pricerange=pricerange,
                                  yearmodel=year_model)
         searched.save()
-        # searching_values = SearchedValue.objects.last()
-        # deletedvalue = SearchedValue.objects.get(id=searching_values.id - 1)
-        # deletedvalue.delete()
+        searching_values = SearchedValue.objects.last()
+        deletedvalue = SearchedValue.objects.get(id=searching_values.id - 1)
+        deletedvalue.delete()
     return render(request, 'local/search.html')
 
 

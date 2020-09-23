@@ -1,10 +1,10 @@
-koko_suomi
 ahvenanmaa
 etela-karjala
 etela-pohjanmaa
 etela-savo
 kainuu
 kanta-hame
+koko_suomi
 keski-pohjanmaa
 keski-suomi
 kymenlaakso
